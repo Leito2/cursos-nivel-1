@@ -1,0 +1,20 @@
+antes doc - ahora docx  <-- la extencion de Word
+
+antes xls - ahora docx  <-- la extencion de Excel
+
+antes ppt - ahora pptx  <-- la extencion de PowerPoint
+
+avi, mp4, mov           <-- extenciones de formato video
+
+mp3, wav, m4a(apple)    <-- extenciones de formato audio
+
+JPG <-- formato de imagene comprimida
+PNG <-- formato de imagen no comprimida y con transparencia
+GIF <-- formate de imagenes en bucle
+BMP, PSD, TIFF <-- otros formatos de imagen
+WEBP <-- formato de imagen web para las webs
+
+HTML <-- formate de HyperText Markup Language (paginas web)
+CSS <-- formato de Custom Style Sheet (diseño de paginas web)
+JS <-- formato de lenguaje de programacion javascript
+py, php, ino, json, <-- y otros lenguajes etc
