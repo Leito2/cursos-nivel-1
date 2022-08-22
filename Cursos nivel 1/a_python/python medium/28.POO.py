@@ -9,7 +9,6 @@ class NombreDeClase():
 
 sabiendo que self es nuestro objeto
 '''
-from turtle import color
 
 
 class perro(): #recomendado colocar las camelCase siempre
