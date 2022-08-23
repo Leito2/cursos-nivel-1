@@ -1,0 +1,563 @@
+<!-- SEO Search Engine Optimization (optimización en motores de búsqueda) -->
+
+<!-- URI (uniform resourse identificator) = URL (uniform resourse location) + URN (uniform resourse name) -->
+<!-- URI ( protocolo + subdominio + dominio + etensión + ruta relativa + URN(como un nombre de busqueda) ) -->
+
+
+<!DOCTYPE html> <!-- Estar en el estandar de 2004 W3C de HTML (versión 5.2 2017) -->
+
+
+<!-- existen los atributos booleanos y comunes -->
+<!-- boleanos como auto, loop (verdaderos por colocarse y falso por no colocarse)-->
+<!-- comunes como (atributo='valor')-->
+<!-- GLOBALES
+    class (en general para dar estilos en CSS)
+    id (en general unico de cada objeto para manipulacion de DOM en JS(javascript) por ejemplo)
+    title (para accesibilidad que es una breve descripcion de lo que hace para que un narrador lo interprete y lo narre)
+-->
+<html lang="es"> <!-- lenguaje español='es' english='en' francés='fr'-->
+
+<!-- el head es lo que guarda metadatos o datos escondidos de la pagina que conforman las descripciones y SEO de la pagina -->
+<head>
+
+    <meta charset="UTF-8"> <!-- Estandar de representacion de 256 carracteres con 8 bits (codigo ASCII [ American Standard Code for Information Interchange ] ) -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- compatibilidad con navegadores que no cumplen los estandares -->
+    
+    <!-- meta con atributos name y content -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Permite restricciones de resolución para responsive design ( también ayuda con el SEO ) -->
+    <meta name="keywords" content="html5,pagina de html,página"> <!-- palabras clave SEO -->
+    <meta name="description" content="Mi página de prueba que se muestra porque tiene index.html"> <!-- descripcion SEO -->
+    <meta name="author" content="Leito"> <!-- autor SEO -->
+    <meta name="copyright" content="W3C"> <!-- copyright SEO -->
+
+<!-- ICONOS EN LA PÁGINA -->
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/0/00/HTML5_logo_black.svg"> <!-- icono de la página -->
+
+<!-- INYECTAR JS O CSS EN HTML -->
+    <!-- <link rel="stylesheet" href="ruta"> (href ya que como que css afecta html de manera estatica y lo ve como recurso o algo así)-->
+    <!-- <script src="ruta"></script> (src ya que esto si es más una coneccion real y dinámica)-->
+
+    <!--protocolos Open Graph (que se muestra a compartir el link de nuestra página)-->
+    <meta property="og:title" content="Curso HTML - Leito">
+    <meta property="og:url" content="http://192.168.1.7:5500/Cursos%20nivel%201/b_curso_html5/index.html">
+    <meta property="og:description" content="es una guia de mis conocimientos html5">
+    <meta property="og:image" content="ruta"><!--en twitter cambia a twitter:type == og:type ejmp = twitter:image-->
+    
+    <title>Document</title> <!-- titulo de la pagina web -->
+
+    <!-- Ir a la página de font-awesome y registrarse y verificar para tener un codigo que te ayuda a colocar iconos con la etiqueta <i></i> y su atributo class='valor' -->
+    <script src="https://kit.fontawesome.com/(aca un codigo).js" crossorigin="anonymous"></script> <!-- esta seria la forma de la "llave" -->
+    
+
+
+<!-- ignorar eso es solo para darle estilo a la tabla-->
+    <style>
+        col {
+            background-color: rgb(255, 164, 164);
+        }
+        col:nth-child(2) {
+            background-color: rgb(210, 255, 255);
+        }
+    </style>
+
+
+</head>
+<!-- RUTAS LOCALES O RELATIVAS(a la localidad) Y ABSOLUTAS O EXTERNAS-->
+<!--
+    RELATIVAS: ./assets/imagenes/perro.webp (mientras que .bmp es la imagen sin comprimir, jpg es comprimida y webp es comprimida especial para web)
+    ABSOLUTAS: https:/... (es un enlace http o https)
+-->
+
+
+<!-- el body es lo que se ve y carga directamente en la página para el usuario -->
+
+
+<!-- ETIQUETAS DE SECCIÓN DE CONTENIDO -->
+
+<!--primero que todo todas estas etiquetas son de bloque y vienen de <div> la cual es una etiqueta utilizada para separar contenido en forma que lo podamos editar luego visualmente (sin SEO) -->
+    <!-- como tambien <span> es el divisor por defecto enlinea como div pero en linea -->
+        
+        <!-- <header>(el la que contiene <nav>(menú) , logo, busqueda, titulo)    <main>(el cuerpo y estructura principal del contenido de la página)    <footer>(creditos, enlaces, más SEO,etc...) -->
+  
+<body>
+<!-- CONTENIDO DE TEXTO <hx>, <p> -->
+    <header  tabindex="1" title="header"> <!-- accesibilidad para darle al tab y entonces dar un focus o seleccionar esa parte -->
+        <h1>HTML5</h1> <!-- headers ( Herramientas del SEO las cuales con su tamaño a priori representan su importancia en la página [del 1 al 6]) -->
+        <p>HyperText Markup Language</p> <!-- contenido en texto, este no tiene importancia en la página alguna con el SEO -->
+        <!-- ALGUNOS ELEMENTOS DE TEXTO EN LINEA -->
+        <!-- con SEO -->
+        <strong>strong</strong>
+        <em>em</em>
+        <del>del</del>
+
+        <small>small</small>
+        <tt>teletipada</tt>
+        <!-- sin SEO -->
+        <b>b</b>
+        <i>i</i>
+        <strike>strike</strike>
+
+        <u>underline</u>
+        <sub>subíndice</sub>
+        <sup>supíndice</sup>
+        <br> <!-- salto de linea y <wbr> salto de linea opcional como lo tienen por defecto los guiones ( - ) -->
+        
+<!-- ALGUNAS MANERAS ESPECIALES DE REPRESENTAR TEXTO O NUMEROS O CODIGO ETC... -->
+        <time>6/10/2022 0:00</time> <!-- navegador detecta que es una fecha y  es la del cumpleaños (16) de mi hermana -->
+    </header>
+
+    <!-- ETIQUETAS DE CONTENIDO TEXTUAL -->
+    <!-- <article>, <section>, <aside> -->
+        <!-- generalmente article es el principal y seccion las subramas, aside siempre es un contenido extra que estra dentro de los 2 o entre 2 seccion en este caso -->
+        <!--
+            ARTICLE: contenido independiente el cual puede representar diferentes noticias (utilizandolo como principal)
+            SECTION: contenido dependiente el cual puede representar diferentes pasos al cocinar una reseta (utilizandolo como principal)
+            ASIDE: contenido que depende te otro mayor y que puede tener contenido extra dentro de algo (en general esta entre los main, footer y header3)
+            ( tambien pueden ser section dentro de section y article dentro de article )
+            >> de igual manera los article y section pueden tener sus header, main y footer
+            (el article madre puede tener tambien pero el section madre no ya que si contenido es independente)
+        -->
+        <!-- EJEMPLO -->
+        <main>
+            <article>
+                <h2>Novela</h2>
+                <section>
+                    <h3>titulo de una seccion del articulo</h3>
+                    <!--contenido-->
+                </section>
+
+                <section>
+                    <h3>titulo de una seccion del articulo</h3>
+                    <!--contenido-->
+                    <aside> <!-- contenido extra --> </aside>
+                </section>
+            </article>
+
+            <article>
+                <h2>Novela</h2>
+                <section>
+                    <h3>titulo de una seccion del articulo</h3>
+                    <!--contenido-->
+                </section>
+
+                <section>
+                    <h3>titulo de una seccion del articulo</h3>
+                    <!--contenido-->
+                    <aside> <!-- contenido extra --> </aside>
+                </section>
+            </article>
+        </main>
+
+        <!-- los figure es donde hay una imagen y figcaption es la cita de la imagen (esto es como un aside que puede ir dentro de main, sections etc...)-->
+        <figure> <!-- para colocar imagenes o detener el flujo de lo que se va hablando con un tabla o un anuncio etc -->
+            <img src="ruta" alt="html5">
+            <figcaption>ruta</figcaption> <!--opcional(pie de foto, por ejemplo de donde viene)-->
+        </figure>
+<!------------->
+    <header>
+        <nav>hola soy un menú</nav>
+    </header>
+
+<!-- ETIQUETAS MUY UTILES -->
+<!-- primero saber que href (se utiliza para establecer relaciones entre sitios en general) y src (para localizar recursos)-->
+        <a href="ruta"></a> <!--colocar links-->
+            <!-- tambien puedes colocar referencias a un ID -->
+            <!-- y tambien las dos como <a href='ruta#id' ></a> -->
+        <a href="" target="_blank"></a><!--lo mismo pero con un click normal lo abre en otra pagina (el valor por defecto es _self)-->
+        <!-- en los enlaces tambien se puede colocar el abributo booleano (download) pero si la href es relativa -->
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/HTML5_logo_black.svg" alt="que es la imagen?" width="200px"><!--imagenes (src es por estos ser rutas de recursos o algo así)-->
+        <!--limito el tamaño de la imagen con una mala practica tan mala que es peligrosa-->
+        <audio src="ruta" autoplay loop muted controls></audio><!--audio el cual tiene como video estos atributos además de hidden para ocultar-->
+        <video src="ruta" controls></video><!--video y los mismos atributos que audio-->
+
+        <iframe width="400" height="275" src="https://www.youtube.com/embed/vz4z0RLcAyk" title="YouTube HTML" frameborder="0" allowfullscreen></iframe><!-- si ves el link de yt dice embed porque img audio y video son contenido enbebido estos se sacan de disdintas redes como youtube (es un video pero es malo en ocaciones para el rendimiento)-->
+
+
+    <!-- LISTAS -->
+        <!--Lista no ordenada-->
+        <ul type="square"><!--square, circle o disc (son distintos tipos de la lista)-->
+            <li>Elemento 1</li><!--item list los objetos de las listas son así-->
+            <li>Elemento 2</li>
+        </ul>
+        <!--Lista ordenada-->
+        <ol type="I" start="3"><!--tipo 1,a,A,I,i...etc(el 1 es numeros normales, a y A son romanos y a es del abecedario)--> <!--start es de donde comienza a enumerar-->
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+        </ol>
+        <!--Lista de definicion-->
+        <dl>
+            <dt>HTML</dt><!--titulo de definición-->
+            <dd>HyperText Markup Language</dd><!--dato de definición-->
+            <dt>CSS</dt><!--titulo-->
+            <dd>Cascade Style Sheets</dd><!--dato-->
+        </dl>
+    <!-- <picture>
+            <source src="/Curso HTML5/assets/imagenes/gato.webp" media="(min-width:800px)">
+            <img src="/Curso HTML5/assets/imagenes/gato-para-celulares.webp" alt="gato">
+         </picture> -->
+        
+<!-- BLOQUES ESPECIALES -->
+         <!-- Direcciones -->
+        <address> <!-- forma correcta de colocar direcciones -->
+            Tony Starl <br>
+            Malibú 10880 <br>
+            90265 <br>
+            California <!--forma correcta de utilizar un br por etructura de un texto y no por diseño-->
+        </address>
+
+        <!-- Citas -->
+        <blockquote cite="https://facebook.com (si fueran más de 40 palabras"> <!-- forma correcta de sitar en el navegador y a parte tiene sangria ( <q></q> [quote] ) es lo mismo pero en linea-->
+            <p>
+                <strong>cita extensa(<q cite="hecho por mí">con sangria, con o sin comillas</q>) Directa (refiriendose al contenido y al autor sin sangria y con comillas):
+
+                </strong><br>(esta es una cita directa)<br>  
+                <b>Facebook (2022)</b> "te ayuda a comunicarte y compartir con las personas que forman parte de tu vida" <b>(pp.10,22).</b><br>
+
+                <strong>o bien al final(autor fecha y capitulos), en una cita indirecta(se refiere solo al contenido y no muestra interes por el autor) -> (Facebook,2022,pp.10,22).</strong>
+            </p>
+        </blockquote>
+
+        <!-- Codigo  -->
+        <pre>
+            para escribir textual     mente   algo
+            poemas, codigo xd
+            <code> <!-- mejor para codigo -->
+                es lo mismo que pre
+                    es mejor aca xd &#189;(&#(numero del 0-255))  <small>estos
+                        codigos se pueden encontrar: <a href="https://ascii.cl/es/codigos-html.htm" target="_blank">aca</a>
+                    </small>
+                    & = ampersand
+ } (los codigos tienen su numero { &#[numero]; } o { &[nombre]; } )
+
+simbolo copyright &copy; (colocar &[control + espacio] para ver sugerencias)
+las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
+            </code>
+        </pre>
+
+
+        <hr> <!-- sirve para cambiar de temas como separar articulos con section o section con articulos independientes(lo más comun) -->
+        <!--es como una linea larga_______________________________________________________________________________________________________________________________________________________ xd -->
+
+
+    <!-- FORMULARIOS (IMPORTANTE) -->
+        <!-- un textarea normal se puede editar como un parrafo -->
+        <textarea readonly> se que solo me puedes leer, pero te decia que esto va en los ditintos formularios tambien</textarea> <!--este envia por un submit-->
+        <textarea disabled> se que solo me puedes leer, pero encima yo no envio :c</textarea><!--este no envia por un submit-->
+
+        <!-- En general los formularios se envian a una base de datos o son procesados por un servidor por lo que van en un FORM -->
+        <form method="post"> <!-- engloba el formulario siempre para enviarse -->
+
+            <!-- TEXTO -->
+            <label for="nombre">Texto</label> <!-- 'for' para darle click y escribir en el input -->
+            <input type="text" id="nombre" placeholder="nombre" minlength="2" maxlength="7" required><!--no más de 7 palabras y más de 2-->
+            <!-- el typo texto es para escribir texto   -    la id tiene que ser lo mismo que si respectivo label (titulo del input) -->
+            <!-- el placeholder es un texto preestablecido el cuál aparece antes de escribir -->
+            
+            <!-- CONTRASEÑA -->
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" required="">
+            
+            <!-- NUMEROS (tambien la e de exponencial de base 10) -->
+            <label>Número [2, 10]</label>
+            <input type="number" min="2" max="10"> <!-- un maximo y minimo en los numeros-->
+
+            <!-- EMAIL (facilidad en celular y requiere @ ) -->
+            <label>Email</label>
+            <input type="email" required> <!--requiere que se llene el campo de manera correcta-->
+
+            <!-- TELÉFONO -->
+            <label>teléfono</label>
+            <input type="tel"><!--esto cambia en celulares para tener más facilidad de tocar numeros-->
+            
+            <!--DIRECCION-->
+            <label>url</label>
+            <input type="url"><!--cambia en celulares por ejemplo da sugerencias de url's-->
+
+            <!-- COLOR -->
+            <!-- elegir opciónes de color-->
+            <label>Color</label>
+            <input type="color">
+            
+            <!-- RANGO -->
+            <label>Rango</label>
+            <input type="range" step="10" min="0" max="100"> <!-- step son los saltos de los rangos  luego min es el minimo y max es el maximo (toma de un numero del 0 al 100 como: 30, 60) -->
+            
+            <!-- FECHAS -->
+            <input type="date" required=""><!--fecha-->
+            <input type="time" required=""><!--hora--><!--datetime no se recomienda porque unos navegadores no les da-->
+            <input type="month" required=""><!--fecha--><!--week no se usa casi nunca-->
+
+            <!-- BUSCAR -->
+            <!-- es un buscador el cual así no tiene opciones para buscar -->
+            <label>Buscar
+                <input type="search">
+            </label>
+            
+            <!-- BOTON (normal)-->
+            <input type="button" value="Hola">
+            
+            <!-- BOTON DE RESETEAR -->
+            <input type="reset">
+            
+            <!-- BOTON DE ENVIAR -->
+            <button>Enviar</button>
+            <input type="submit">
+
+            <!-- si te diste cuenta, dejé de conectar los labels con sus inputs -->
+
+        </form>
+
+
+        <form>
+            <fieldset><!-- ENCUADRAR EL FORMULARIO [_] -->
+
+                <legend>Formularios de selección</legend><!--TITULO DEL FORMULARIO (este acompaña a fieldset)-->
+
+                <!-- RADIO (un input que es de seleccion unica)-->
+                <!--(el NAME de los respectivos TIENE que ser el mismo para SABER la seleccion de algo) -->
+                <label for="radio1">Hombre</label><!-- titulo de los inputs -->
+                <input id="radio1" type="radio" name="gender" value="masculino"><!--REQUIERE value porque no se escribe en ellos y hay que saber su valor-->
+                <label for="radio2">Mujer</label>
+                <input id="radio2" type="radio" name="gender" value="femenino" checked> <!-- por defecto me selecciona femenido o Mujer con checked -->
+                <label for="radio3">Desconocido</label>
+                <input id="radio3" type="radio" name="gender" value="ninguno">
+
+            </fieldset>
+        </form>
+
+
+        <form>
+            <fieldset>
+                <legend>Más formularios de selección</legend>
+
+<!--                                -->
+                <div> <!-- utilidad de div -->
+                    <label>
+                        <input type="checkbox" name="lenguages" value="html" checked> <!--TIENE NAME DE LENGUAJES Y SUS VALORES-->
+                        HTML
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="languages" value="css" checked><!--cheked para seleccionar radios y checkboxes(en checkbox se pueden 2 a la vez)-->
+                        CSS
+                    </label>
+                </div>
+                <div>
+                    <label> <!-- FORMA de ENLACE de LABELS sin usar FOR ni ID-->
+                        <input type="checkbox" name="lenguages" value="javascript"><!--unica diferencia entre radio es que son varias selecciones-->
+                        JS <!--este es el titulo de label solo que esta en el final-->
+                    </label>
+                </div>
+<!--                                -->
+
+            </fieldset>
+        </form>
+
+<!--________________________-->
+
+        <form>
+            <fieldset>
+                <legend>Formulario de selección con busqueda</legend>
+<!--               -                -->
+                <label>Nivel de matemáticas: <!-- un solo label -->
+
+                    <select name="nivel-matematicas"> <!--se podria colocar un multiple ->(como atributo booleano) (para que con control apretado colocar varias options)-->
+                        <!-- name va en el select que es un tipo especial de input -->
+
+                        <optgroup label="Básico"><!--label es como nombre del grupo de opciones-->
+                            <option value="1">1</option> <!-- los valores van en las opciones no en el grupo opciones -->
+                            <option value="2">2</option> <!-- el valor es algo y lo que se ve es otro cosa por eso los 2 números-->
+                        </optgroup>
+
+                        <optgroup label="Medio">
+                            <option value="3" selected>3</option><!--option se seleccionan con selected-->
+                            <option value="4">4</option>
+                        </optgroup>
+
+                        <optgroup label="Avanzado">
+                            <option value="5">5</option>
+                        </optgroup>
+
+                    </select>
+
+                </label>
+<!--               -                -->
+            </fieldset>
+        </form>
+
+
+        <form>
+            <fieldset>
+
+                <legend>Otros 2 formularios busqueda-selección</legend>
+                <div>
+                    <label>
+                        Poder Buscar el (1)
+                        <input type="list" list="ll1ll" name="numero-1"><!--en general se tienen estos 3 atributos-->
+                        <!-- si es tipo list tiene un atributo list que es como un for del label, osea que tiene el datalist un id respectivo al input tipo list -->
+                        <datalist id="ll1ll">
+                            <option value="l">lllll</option><!--tambien pueden tener OPTGROUP con sus labels-->
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="1">ll1ll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option>
+                            <option value="l">lllll</option><!-- también funciona con option (se seleccionan con selected)-->
+                        </datalist>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Buscar y cargar un archivo
+                        <input type="file">
+                    </label>
+                </div>
+
+            </fieldset>
+        </form>
+
+        <!-- 2 'INPUTS' ESPECIALES DE PROGRESO -->
+        <form>
+            <fieldset>
+                <legend>No es util solo con HTML</legend>
+                <label>Nivel de Biología</label> <!--no me da la gana de enlazar el label-->
+                <meter min="0" max="100" value="15" low="30" optimum="30" high="90"></meter> <!--valor por defecto value 0-->
+
+                <label for="book">Libro 1</label>
+                <progress id="book" max="100" value="70"></progress><!--se puede utilizar value-->
+            </fieldset>
+        </form>
+
+<!-- METODOS GET(digamos que para recivir información del usuario), POST(digamos que para enviarle información al usuario) -->
+        <form action="archivo.html" method="get"> <!-- get envia a archivo.html la variable mensaje=[lo que escriba] lo que comprueba que es obligatorio en la mayoria colocar name o value(si lo necesita como un boton o selectores)-->
+            <fieldset>
+                <legend>Area de texto más propiedades y get</legend>
+                <label for="texto">area de texto</label>
+                <textarea name="mensaje" id="texto" cols="50" rows="5"></textarea> <!-- los textarea pueden tener columnas o filas para definir -->
+                <button>Enviar</button>
+            </fieldset>
+        </form>
+
+        <form action="archivo.html" method="post"> <!-- estos datos llegan al panel de desarrollador en network y en payload aparece la variable enviada al archivo -->
+            <fieldset>
+                <legend>Area de texto más propiedades y post</legend>
+                <label for="texto2">area de texto</label>
+                <textarea name="mensaje2" id="texto2" cols="50" rows="2" placeholder="escribir algo cortico pliss"></textarea>
+                <input type="submit">
+            </fieldset>
+        </form> <!--ademas existe el atributo autofocus pero es para que al colocar la página automaticamente seleccionar el imput, como por ejemplo a un text-->
+        <input type="button" value="mi botoncito"> <!-- manera incorrecta de colocar formularios(sin su form) porque un reset resetearia todo y no solo el form, al igual que el submit o el <button> -->
+        <hr>
+
+    <!-- TABLAS -->
+        <table>
+
+            <!--caption es el titulo de la tabla-->
+            <!--atributo arial-label es tipo de title para accesibilidad-->
+            <caption aria-label="una tabla de horario de clases"></caption>HORARIO DE CLASES</caption> <!--atributos para personas ciegas con cierto tipo de extenciones o navegadores que dicen la información que contienene la etiqueta caption para informar-->
+            <colgroup>
+                <col span="5"> <!-- agrupar solo las columnas, como para dar estilo a columnas, ya que las FILAS SON CADA TR -->
+                <col> <!-- si hay 6 columnas entonces se tienen que colocar las 6 (o sino seria como si no fuera columna(claro, para darle estilo))-->
+            </colgroup>
+
+            <!-- la tabla de divide en thead, tdoby, tfoot -->
+            <thead>
+                <tr>
+                    <th></th> <!-- table height (titulos enlistados en la tabla) -->
+                    <th>L</th>
+                    <th>M</th>
+                    <th>X</th>
+                    <th>J</th>
+                    <th>V</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:30 -9:30</td>  <!-- table date (datos en la tabla) -->
+                    <td>Matemáticas</td>
+                    <td>Matemáticas</td>
+                    <td>Sociales</td>
+                    <td>Matemáticas</td>
+                    <td>Matemáticas</td>
+                </tr>
+                <tr>
+                    <td>9:30 - 10:25</td>
+                    <td>Lengua</td>
+                    <td>Lengua</td>
+                    <td>Matemáticas</td>
+                    <td>Ciencias</td>
+                    <td>Lengua</td>
+                </tr>
+                <tr>
+                    <td>10:25 - 11:20</td>
+                    <td>Educación Física</td>
+                    <td>Ciencias</td>
+                    <td>Lengua</td>
+                    <td>Lengua</td>
+                    <td>Educación Física</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">11:20 - 12:40</td> <!-- span es como espacio por lo que 2 filas hacia abajo -->
+                    <td colspan="5">Recreo</td> <!-- 5 columnas hacia la derecha-->
+                </tr>
+                <tr><!-- como se hizo un span de filas hacia abajo, para que no se dañe se tiene que omitir un td en la fila de abajo -->
+                    <td>Inglés</td>
+                    <td>Sociales</td>
+                    <td>Inglés</td>
+                    <td>Tutoría</td>
+                    <td>Inglés</td>
+                </tr>
+                <tr>
+                    <td>12:40 - 13:35</td>
+                    <td>Música</td>
+                    <td>Educacón Física</td>
+                    <td>Plástica</td>
+                    <td>Religión</td>
+                    <td>Música</td>
+                </tr>
+                <tr>
+                    <td>13:35 - 14:30</td>
+                    <td>Tecnología</td>
+                    <td>Francés</td>
+                    <td>Tecnología</td>
+                    <td>Francés</td>
+                    <td>Tecnología</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total asignaturas</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <center>
+            <p><small>mejor no usar center</small></p> <!-- center centra forzosamente el texto o lo que tenga -->
+        </center>
+    </main>
+
+
+    <footer>
+        <h4>&COPY; Copyright - <small>Todos los derechos reservados</small></h4>
+    </footer>
+
+</body>
+</html>
