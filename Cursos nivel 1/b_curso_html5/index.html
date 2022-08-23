@@ -31,20 +31,27 @@
     <meta name="author" content="Leito"> <!-- autor SEO -->
     <meta name="copyright" content="W3C"> <!-- copyright SEO -->
 
+    <meta name="theme-color" content="#000"> <!-- un tema negro para celular con codigo solo hexadecimal-->
+
 <!-- ICONOS EN LA PÁGINA -->
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/0/00/HTML5_logo_black.svg"> <!-- icono de la página -->
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/0/00/HTML5_logo_black.svg"> <!-- icono de la página en celular (acceso directo) -->
 
 <!-- INYECTAR JS O CSS EN HTML -->
     <!-- <link rel="stylesheet" href="ruta"> (href ya que como que css afecta html de manera estatica y lo ve como recurso o algo así)-->
     <!-- <script src="ruta"></script> (src ya que esto si es más una coneccion real y dinámica)-->
 
+<!-- META ( CANONICAL ) -->
+     <link rel="canonical" href="http://tudominio.com/la-url-canonica">
+     <!-- para SEO y se refiere a la url original del sitio web de donde viene el contenido -->
+
     <!--protocolos Open Graph (que se muestra a compartir el link de nuestra página)-->
     <meta property="og:title" content="Curso HTML - Leito">
     <meta property="og:url" content="http://192.168.1.7:5500/Cursos%20nivel%201/b_curso_html5/index.html">
     <meta property="og:description" content="es una guia de mis conocimientos html5">
-    <meta property="og:image" content="ruta"><!--en twitter cambia a twitter:type == og:type ejmp = twitter:image-->
+    <meta property="og:image" content="ruta"><!--en twitter cambia a twitter:type == og:type ejmp = twitter:image (pero no es property, es name), aunque tambien tiene algunas OG--> 
     
-    <title>Document</title> <!-- titulo de la pagina web -->
+    <title>HTML5</title> <!-- titulo de la pagina web -->
 
     <!-- Ir a la página de font-awesome y registrarse y verificar para tener un codigo que te ayuda a colocar iconos con la etiqueta <i></i> y su atributo class='valor' -->
     <script src="https://kit.fontawesome.com/(aca un codigo).js" crossorigin="anonymous"></script> <!-- esta seria la forma de la "llave" -->
@@ -82,7 +89,8 @@
   
 <body>
 <!-- CONTENIDO DE TEXTO <hx>, <p> -->
-    <header  tabindex="1" title="header"> <!-- accesibilidad para darle al tab y entonces dar un focus o seleccionar esa parte -->
+    <header  tabindex="1" title="header" role="heading"> <!-- accesibilidad para darle al tab y entonces dar un focus o seleccionar esa parte -->
+        <!-- TAMBIEN PARA ACCESIBILIDAD role es bueno para saber que utilidad tiene una etiqueta -->
         <h1>HTML5</h1> <!-- headers ( Herramientas del SEO las cuales con su tamaño a priori representan su importancia en la página [del 1 al 6]) -->
         <p>HyperText Markup Language</p> <!-- contenido en texto, este no tiene importancia en la página alguna con el SEO -->
         <!-- ALGUNOS ELEMENTOS DE TEXTO EN LINEA -->
@@ -99,6 +107,7 @@
         <strike>strike</strike>
 
         <u>underline</u>
+        <mark>Mark</mark>
         <sub>subíndice</sub>
         <sup>supíndice</sup>
         <br> <!-- salto de linea y <wbr> salto de linea opcional como lo tienen por defecto los guiones ( - ) -->
@@ -220,10 +229,10 @@
         </blockquote>
 
         <!-- Codigo  -->
-        <pre>
+        <pre> <!-- pre formateo de código -->
             para escribir textual     mente   algo
             poemas, codigo xd
-            <code> <!-- mejor para codigo -->
+            <code> <!-- formateo de código -->
                 es lo mismo que pre
                     es mejor aca xd &#189;(&#(numero del 0-255))  <small>estos
                         codigos se pueden encontrar: <a href="https://ascii.cl/es/codigos-html.htm" target="_blank">aca</a>
@@ -284,6 +293,9 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
             <label>Rango</label>
             <input type="range" step="10" min="0" max="100"> <!-- step son los saltos de los rangos  luego min es el minimo y max es el maximo (toma de un numero del 0 al 100 como: 30, 60) -->
             
+            <!-- HIDDEN -->
+            <input type="hiddden">
+
             <!-- FECHAS -->
             <input type="date" required=""><!--fecha-->
             <input type="time" required=""><!--hora--><!--datetime no se recomienda porque unos navegadores no les da-->
@@ -308,6 +320,14 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
             <!-- si te diste cuenta, dejé de conectar los labels con sus inputs -->
 
         </form>
+
+
+<!-- DATA ATTRIBUTES -->
+<!--
+    <input type='text'>  <----- atributos comunes
+    <input data-tipo='text'>   <---- y esto seria para yo saber que tipo es el input desde javascript si no se ingles
+-->
+
 
 
         <form>
@@ -561,3 +581,21 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
 
 </body>
 </html>
+
+<!-- 
+    SHORT CUTS:
+    Control + Mayus + 7 = comentar algo
+    Control + Mayus + { = tab hacia la izquierda
+    Control + Mayus + } = tab hacia la derecha
+    Control + L = seleccionar linea
+    Control + A = seleccionar todo el documento
+    Control + B = quitar y poner el explorador
+    F2 = cambiar nombre de variables
+    Control + Mayus + P = Abrir menú de preferencias
+    Control + Tab = cambiar de ventanas
+    Control + Mayus + I = organizar codigo (primero seleccionar lo que se va a organizar)
+    Control + Mayus + . = quitar el puntero
+    Control + + = aumenta la pantalla
+    Control + - = reduce la pantalla
+    Control + Z = salto de linea automatico
+ -->
