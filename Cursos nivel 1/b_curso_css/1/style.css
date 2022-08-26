@@ -1,0 +1,42 @@
+/*normalize*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* box model: content - padding - broder - margin*/
+.content-box {
+  font-size: 16px; /* depende del tamaño de este que es 1em en el parrafo de adentro */
+  width: 50vw;
+  height: 50vh;
+  background-color: burlywood;
+  padding: 1em; /*16 pixeles (esto es un ShortHand) */
+  /*lo mismo que: */
+  padding: 1em 1em; /* ariba y abaja 1em - derecha y izquierda 1me */
+  padding: 1em 1em 1em 1em; /*top - right - bottom - left*/
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  margin: 1em;
+  text-align: center; /* centrar contenido de la caja con display block */
+  border-radius: 3em;
+  border: 4px solid black; /* TAMAÑO ESTILO COLOR */
+  /* Estilos: dashed double groove ridge inset outset */
+  /* Box shadow */
+  box-shadow: 30px 10px 0px 10px black; /*right - bottom - focus - borde - color*/
+  transform: rotate(0.05rad); /*sentido manesillas del reloj (rad, deg)*/
+  outline: 4px solid rgb(218, 185, 142); /*sirve para resaltar, en si no afecta en DOM*/
+}
+.content-box__p {
+  font-size: 5em;
+  font-weight: bold; /*lighter (de 100 a 900) */
+  font-family: Georgia;
+  font-family: sans-serif;
+  font-family: "Silkscreen", cursive;
+  line-height: 1; /*lo normal*/
+  text-shadow: 5px 2px 6px #222; /* right - bottom - focus - color (si separas por comas la misma propiedad, se puede intensificar)*/
+}
+p {
+  font-family: "Silkscreen", cursive;
+}

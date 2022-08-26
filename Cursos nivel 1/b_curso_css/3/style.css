@@ -1,0 +1,72 @@
+div {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: peru;
+  margin: 10px;
+}
+/*pseudo-clase*/
+/*como :hover pero :first-child
+o como :nth-child(x)
+*/
+div:nth-child(1) {
+  background-color: lightgray;
+  position: fixed; /*lo mismo que absolute pero se queda fijado en una posicion del Viewport*/
+  margin: 0;
+  top: 60px;
+  left: 60px;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+div:nth-child(4) {
+  background-color: gray;
+  position: sticky; /*un fixed pero relativo ya que se pega a la pantaña cuando se pasa por él*/
+  top: 10px;
+  left: 0px; /*tiene que estar posicionado*/
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  z-index: 0;
+}
+
+div:nth-child(3) {
+  overflow: scroll; /*Desbordamiento: scroll, hidden, auto*/
+  /*Tambien hay overflow-x y overflow-y*/
+}
+
+div:nth-child(5) {
+  display: block; /*lo default*/
+  position: relative; /*para que ocupe su espacio pero este posicionado y no estatico --> o no funciona colocar position al contenido y moverlo (ya que lo estatico es sin vida y no es bueno para el contenido)*/
+  overflow: hidden; /*por más scroll que necesite se enconde o no aparece*/
+}
+
+div:nth-child(5) img {
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  transition: 0.75s; /*es lo que tarda hacer algo con el hover*/
+}
+div:nth-child(5):hover > img {
+  /*quiere decir que al hover del div, genera top y left 0 en la imagen hija del contenedor div*/
+  /*utilizando la pseudoclase :hover*/
+  top: 0px;
+  left: 0px;
+}
+
+/*display es una propiedad LARGA
+
+Tienes que saber que las basicas son
+block, inline, inline-block
+
+Pero luego están todas las que tienen table y item (la verdad no sirven mucho) 
+inline-table, table, list-item, table-cell, table-row, table-column
+
+Por ultimo las NAZI como flex y grid
+tambien inline-flex y inline-grid
+*/
+
+/*antes también se hacian las páginas con tablas y con float que es un preopiedad que hace que un contendedor con inline-block o semejantes se corran hacia la derecha en su contenedor padre como pro ejemplo el viewport*/
+
+/*la unica utilidad de tablas es hacer tablas pero no maquetación, y para float la unica es correr una imagen dentro de texto lo cual fuerza el corrido entre letras lo cual es muy util, el texto tiene que estar a la par de la imagen y no dentro de un contenedor ya que cada letra es un elemento inline y este puede llevar a acomodarse solo*/

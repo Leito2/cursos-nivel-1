@@ -1,0 +1,103 @@
+* {
+  font-family: 'Sen', sans-serif;
+  font-weight: 100;
+}
+.nav__responsive-ul {
+  display: none;
+}
+
+.nav__ul {
+  background-color: #ffeeaa;
+  height: 38px;
+}
+
+.nav__li {
+  display: inline-block;
+  padding: 10px;
+  transition: 0.3s;
+  margin-left: 2px solid #aa8866;
+  height: 100%;
+  width: auto;
+}
+
+.nav__li i {
+  color: black;
+  text-align: right;
+  margin-right: 5px;
+}
+.nav__li a {
+  color: #333;
+  text-decoration: none; /*quitar los bold, underline, italic ,etc..*/
+}
+.nav__li:hover {
+  background-color: #e5d474;
+}
+
+
+.nav__responsive-ul {
+  width: 100vw;
+  height: auto;
+}
+.nav__responsive-li {
+  padding-bottom: 10px;
+  width: 90vw;
+  height: 40px;
+}
+.x-responsive {
+  width: 100vw;
+}
+.nav__responsive-button {
+  position: relative;
+  background-color: #ffeeaa;
+  width: 100vw;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+}
+.nav__responsive-button i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  margin: 3px;
+  padding: 8px;
+}
+.nav__responsive-li a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 10px;
+}
+.nav__responsive-li i {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.nav__responsive-li:hover {
+  background-color: #e5d474;
+}
+.x-responsive:hover {
+  background-color: transparent;
+}
+.nav__responsive-container {
+  position: absolute;
+  width: 90vw;
+  height: auto;
+  background-color: #ffeeaa;
+  top:  -200px;
+  transition: 0.6s;
+  z-index: 200;
+  margin-top: 40px;
+}
+.nav__responsive-container:hover {
+  top:  0;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav__responsive-ul {
+    display: block;
+  }
+  .nav__ul {
+    display: none;
+  }
+}

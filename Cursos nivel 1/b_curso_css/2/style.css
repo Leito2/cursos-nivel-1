@@ -1,0 +1,44 @@
+/*originalmente la caja 4 esta abajo de la 3 abajo de la 2 abajo de la 1*/
+.caja1,
+.caja2,
+.caja3,
+.caja4 {
+  background-color: brown;
+  width: 120px;
+  height: 120px;
+  border: 4px solid gray;
+  outline: 2px solid black; /*importante entender como funcionan entas 2 cosas*/
+  /*según el z-index un outline se pued ever encima de otro*/
+}
+/* margin: auto (podemos centrar los objetos relativos al espacion horizontal que tengan) */
+/*box-sizing: content-box (valor for defecto pero que ya combie en el normalize)*/
+.caja1 {
+  background-color: darkred;
+}
+.caja2 {
+  background-color: brown;
+  position: relative; /*por defecto la position es static*/
+  top: 10px; /*desde arriba se mueve abajo*/
+  bottom: 0; /*desde abajo se mueve arriba*/
+  right: 0; /*desde la derecha se mueve a la izquierda*/
+  left: 10px; /*desed la derecha se mueve a la derecha*/
+  /*top y left son las que se deberian usar y son las primordiales, por lo que botom y right no sirven (se pueden usar negativos)*/
+  z-index: 1;
+
+  opacity: 0.8; /*es una opacidad en las cajitas y punto*/
+}
+.caja3 {
+  background-color: rgb(255, 136, 136);
+  position: absolute; /* 1.es libre de moverse donde quiera y su origen no ocupa espacio(la 4 ocupo su lugar) con el relative */
+  /*2.su punto de referencia pasa a ser su contenedor(si esta posicionado) o el ViewProt*/
+  /*3.el contenedor se ajusta al contenido como un inline(si no se le define(se transforma en inline-block))*/
+  top: 100px;
+  left: 100px;
+  z-index: 0;
+}
+.caja4 {
+  background-color: rgb(255, 180, 180);
+  z-index: 2; /*este solo afecta cuando las cajas tienen una position (por defecto al posicionar el z-index es 0) (lo mejor es ir de 100 en 100 o 50 en 50) */
+
+  /*la unica forma de colocar elementos padres por delante del hijo es dandole la propiedad z-index negativa al hijo para que se ponga atras(pero el padre no puede tener definido el z-index)*/
+}

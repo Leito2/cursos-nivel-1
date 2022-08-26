@@ -1,0 +1,39 @@
+/* OBJECT-FIT */
+div {
+  width: 300px;
+  height: 500px;
+  background-color: black;
+  display: inline-block;
+  margin: 10px;
+}
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /*la imagen se ajusta a el espacio, por lo que mantiene las proporciones pero si es más grande que el contenedor, la imagen queda más pequeña*/
+  object-fit: cover; /*cover hace que la imagen quede completa en el cuadro pero recortada por donde su proporsión sea mayor*/
+  object-fit: none; /*la imagen se queda como es y listo, no se ajusta, si es una resolución alta se ve solo un pedacito*/
+  object-fit: scale-down; /*se queda con contain solo que cuando las resoluciones de la caja se hacen grandes cambia a ser como none y la imagen se queda de su tamaño original (elige entre contain y none)*/
+}
+/*al final se muestra ina imagen que tiene la propiedad contain */
+/*tambien se puede usar object-position en donde si se corta la imagen se puede correr al extremo:
+-top
+-bottom
+-left
+-right
+- tambien medidas positivas y negativas para ajustarlo
+*/
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+  object-position: left; /*o con medidas*/
+}
+/*PROPIEDADES DE CURSOR*/
+div {
+  /*por defecto aca es como si tuviera un hover*/
+  cursor: pointer; /*alias, cell, copy, progress, auto, crosshair, default, help, move, text, wait, grab*/
+}
+div:active {
+  cursor: row-resize; /*n-resize, ne-resize, all-scroll, etc...*/
+}
