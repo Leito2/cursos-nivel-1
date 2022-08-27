@@ -45,7 +45,7 @@ grid-auto-rows: 100px; /*las nuevas filas COMPLETAS van a ser de 100px (aca no s
   grid-template-rows: repeat(3, 150px);
   grid-gap: 5px; 
   grid-auto-flow: column; /* vamos a por defecto crear columnas cuando se haga un exceso de celdas en la matriz que nosotros creamos */
-grid-auto-columns: minmax(100px, 1fr);/*crea en exceso de celdas (columnas de 100px y maximo lo que coja de exceso dividido las 4 columnas, es colo un flex-grow: 1)*/
+  grid-auto-columns: minmax(100px, 1fr);/*crea en exceso de celdas (columnas de 100px y maximo lo que coja de exceso dividido las 4 columnas, es colo un flex-grow: 1)*/
 }
 .grid-items-tres {
   background-color: #bbb;

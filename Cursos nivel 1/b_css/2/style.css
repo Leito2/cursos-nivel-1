@@ -42,3 +42,34 @@
 
   /*la unica forma de colocar elementos padres por delante del hijo es dandole la propiedad z-index negativa al hijo para que se ponga atras(pero el padre no puede tener definido el z-index)*/
 }
+
+/*algunas cosas de background*/
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://fondosmil.com/fondo/17030.jpg);
+  background-size: 100% 100%; /* 100% en x(height) y 100% en y(width)*/
+  background-size: none; /*por defecto*/
+  background-size: contain; /*se escala a ser del tamaño de width de extremo a extremo si es una imagen landspace o tipo paisaje o tipo panoramica, si es portrait o tipo retrato o vertial entonces se escala al height*/
+  background-size: cover;  /*se escala al tamaño del width si es vertical (lo contrario pero parecido a contain)*/
+  background-size: fill; /*lo ajusta a la fuerza*/
+  padding: 30px;
+  border: 5px solid #000;
+  background-clip: content-box; /*(desde donde se muestra pero la recorta) tiene: content-box padding-box margin-box  (el content es desde el padding)*/
+  background-origin: content-box; /*(desde donde se muestra (no la recorta porque desde ahí la origina (claro si la colocamos recortada no se recortara más)) ) tiene las mismas que clip (generalmente es mejor origin pero da igual son opciones)*/
+  background-repeat: no-repeat; /*es porque repite fondos para completar el vacio*/
+  background-position: -10vw 0px; /*posicionar (lo movi un poso a la izquierda para centrarlo) */ /*tambien se puede con center left top bottom right (right top)*/
+  background-attachment: scroll; /*por defecto*/
+}
+.bodyy {
+  width: 100vw;
+  height: 50vh;
+  background-image: url(https://fondosmil.com/fondo/17030.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 5px solid #000;
+  background-origin: content-box;
+  background-attachment: fixed; /*la otra propiedad (buenisima)*/
+  background-position: -20vh 30vw;/*con fixed esto sirve mucho*/
+  /*se auto ajusta pareciondo que esta fijada en el fondo de la web*/
+}

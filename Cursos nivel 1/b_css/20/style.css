@@ -1,0 +1,74 @@
+/* Transform */
+
+.contenedor {
+  width: 90vw;
+  height: 90vh;
+  padding: 30px;
+  background-color: #aaa;
+  margin: 30px;
+  position: relative;
+}
+
+.caja {
+  position: relative;
+  background-color: #666;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+.caja:nth-child(1) { /*donde estaba el primer elemento*/
+  background-color: #999;
+  position: absolute;
+}
+
+.caja:nth-child(2) {
+  transform: translate(100%, -40px); /*translate lo mueve x a la derecha el 100% de su propio width y 40 pixeles arriba si es negativo 2*/
+}
+
+.caja:nth-child(3) { /*donde estaba el segundo elemento*/
+  background-color: #999;
+  position: absolute;
+}
+
+.caja:nth-child(4) {
+  /*lo coloca chiquito y luego lo estira un poco como antes (en horizontal)*/
+  transform: scale(0.5) scaleX(2) translateY(20px); /*más grande o menos grande*/
+  /*despues de escalarlo a la mitad, par que una parte de el como la X vuelva a la normalidad hay que escalarlo al doble*/
+  /*puedes unir las transformaciones*/
+}
+
+.caja:nth-child(5) {
+  background-color: #999;
+  position: absolute;
+}
+
+.caja:nth-child(6) {
+  transform: skew(30deg) translate(-5px, 10px) scale(0.5);
+  /*skew sirve para poder deformar un poco los objedos de lado a lado*/
+}
+
+
+.caja:nth-child(7) {
+  background-color: #999;
+  position: absolute;
+}
+
+.caja:nth-child(8) {
+  transform: rotate(30deg) scale(0.8) translate(5px, 12px);
+} /*las figuras las necesito correr de su lugar porque como todas estan en relativo si se sube una se suben todas*/
+
+
+.caja:nth-child(9) {
+  background-color: #999;
+  position: absolute;
+}
+
+/*Clip path (parte del objeto como una figurita de este)*/
+/*los que trabajan con esto en general trabajan con generadores para ser más rapidos, por lo que eso es lo que haré*/
+.caja:nth-child(10) {
+  transform: translateY(10px);
+  clip-path: polygon(49% 13%, 87% 28%, 50% 100%, 11% 29%);
+} /*como un diamantito*/
+
+/*translete es lo mejor para hacer animaciones o transitions con movimiento o otras cosas*/
+/*ya que esto no consume casi recursos ya que esta dedicado a ello*/

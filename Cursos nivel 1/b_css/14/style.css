@@ -1,0 +1,83 @@
+
+/* GRID */
+
+.grid-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #888;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  justify-items: center;
+  align-items: center;
+}
+.grid-items {
+  background-color: #bbb;
+  padding: 80px;
+}
+
+/*ahora para posicionarse uno a uno los items: 
+justify-self (tambien funciona en flex-box)
+align-self
+*/
+.grid-items:nth-child(1) {
+  align-self: start;
+  justify-self: start;
+}
+.grid-items:nth-child(2) {
+  align-self: end;
+  justify-self: center;
+  background-color: antiquewhite;
+}
+.grid-items:nth-child(3) {
+  align-self: start;
+  justify-self: end;
+}
+.grid-items:nth-child(4) {
+  align-self: center;
+  justify-self: end;
+  background-color: antiquewhite;
+}
+.grid-items:nth-child(5) {
+  align-self: center;
+  justify-self: center;
+  background-color: aquamarine;
+}
+.grid-items:nth-child(6) {
+  align-self: center;
+  justify-self: start;
+  background-color: antiquewhite;
+}
+.grid-items:nth-child(7) {
+  align-self: end;
+  justify-self: start;
+}
+.grid-items:nth-child(8) {
+  align-self: start;
+  justify-self: center;
+  background-color: antiquewhite;
+}
+.grid-items:last-child { /*ultimo con last-child*/
+  place-self: end end ; /*como cordenada(x y)*/
+  place-self: end; /*si son iguales*/
+}/*es lo mismo con flex-start o flex-end*/
+
+/*SHORT HAND*/
+/*
+place-self: (align) (justify);
+
+lo mismo
+
+place-items: (align) (justify);
+place-content: (align) (justify);
+*/
+/*el valor por defecto en estas es stretch*/
+
+/*aca igual hay order como en flex
+
+order se tiene que colocar al inicio para poder estructural de mejor manera o poner con js de manera automatica, order 0 seria el por defecto y si colocamos a algo el order 1 entonces se iria PARA DONDE ESTA EL -> 9
+
+I M P O R T A N  T E
+
+*/

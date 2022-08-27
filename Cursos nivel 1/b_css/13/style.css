@@ -95,7 +95,7 @@ align-content: (flex-start, flex-end, stretch, baseline, center, spaces también
   height: 65px;
 }
 
-/*tambien se puede alinear con::after
+/*tambien se puede alinear con: 
 
 1.justify-content (se le suman: end, start (casi lo mismo que flex-end y flex-start))
 2.align-content
@@ -119,7 +119,6 @@ align-content: (flex-start, flex-end, stretch, baseline, center, spaces también
 /*primero definamos sus tamaños*/
 
 .grid-items-cuatro {
-  align-content: center;
   padding: 30px; /*tambien lo puede redefinir con padding*/
 }
 

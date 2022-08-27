@@ -1,0 +1,62 @@
+/*GRID AREAS*/
+.grid-container {
+  display: grid;
+  grid-template-rows:
+    [a-line] /*ombrando las lineas a la ora de hacer las rows*/
+    200px
+    [b-line]
+    200px
+    [c-line]
+    200px
+    [d-line]
+    200px
+    [e-line];
+  grid-template-columns:
+    [A-line] /*estos nombres pueden utilizarse luego*/
+    200px
+    [B-line]
+    1fr
+    [C-line]
+    200px
+    [D-line];
+  background-color: #444;
+  border: 2px solid #333;
+}
+
+.grid-item {
+  border: 1px solid #222;
+  background-color: grey;
+}
+
+.grid-item:first-child {
+  background-color: #f54;
+/*  grid-row: 1 / 3; */
+  grid-row: b-line / d-line; /*o de esta manera con las lineas*/
+/*  grid-column: 1 / 3; */
+  grid-column: A-line / B-line;
+}
+.grid-item:nth-child(2) {
+  background-color: #5f6; /*colores matecito*/
+  grid-row: a-line / b-line;
+  grid-column: A-line / D-line;
+}
+.grid-item:nth-child(3) {
+  background-color: #67f;
+  grid-row: b-line / d-line;
+  grid-column: B-line / D-line;
+}
+.grid-item:nth-child(4) {
+  background-color: #f7f;
+  grid-row: d-line / e-line;
+  grid-column: A-line / D-line;
+}
+
+/*para organizar en una matriz de 3x3 y poder utiliar mejor las grid-area, nombro las lineas y luego relleno todos los espacion con mi insuficiencia de items (utilice 4 para llenar el resto de celdas y no tener un exceso y tener que generarlos automaticos porque sino no podría nombrarlos)*/
+
+/*se puede como no se pueden usar estos short hands (por mí yo no lo ago o en ocaciones puede ser)
+
+1. Grid: (engloba muchas propiedades como gap, auto, templates (no recomendable por modulariación de codigo))
+
+2. grid-template: row y columns (tambien para grid area)
+
+*/
