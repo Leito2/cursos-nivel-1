@@ -8,10 +8,10 @@
   height: 120px;
   border: 4px solid gray;
   outline: 2px solid black; /*importante entender como funcionan entas 2 cosas*/
-  /*según el z-index un outline se pued ever encima de otro*/
+  /*según el z-index un outline se puede ver encima de otro que tanpoco a definido un z-index*/
 }
 /* margin: auto (podemos centrar los objetos relativos al espacion horizontal que tengan) */
-/*box-sizing: content-box (valor for defecto pero que ya combie en el normalize)*/
+/*box-sizing: content-box (valor for defecto pero que ya cambie en el normalize.css)*/
 .caja1 {
   background-color: darkred;
 }
@@ -19,22 +19,24 @@
   background-color: brown;
   position: relative; /*por defecto la position es static*/
   top: 10px; /*desde arriba se mueve abajo*/
-  bottom: 0; /*desde abajo se mueve arriba*/
+  bottom: 0; /*desde abajo se mueve arriba (pero a partir de donde es encontro al inicio) */
   right: 0; /*desde la derecha se mueve a la izquierda*/
-  left: 10px; /*desed la derecha se mueve a la derecha*/
-  /*top y left son las que se deberian usar y son las primordiales, por lo que botom y right no sirven (se pueden usar negativos)*/
-  z-index: 1;
+  left: 10px; /*desde la derecha se mueve a la derecha*/
+  /*left y top son las que se deberian usar y son las primordiales, por lo que botom y right no sirven (ya que se pueden usar negativos)*/
+  z-index: 1; /*por defecto el z-index: 1 ya hace que la caja se muestra arriba de las otras demás cajas*/
 
   opacity: 0.8; /*es una opacidad en las cajitas y punto*/
 }
 .caja3 {
-  background-color: rgb(255, 136, 136);
-  position: absolute; /* 1.es libre de moverse donde quiera y su origen no ocupa espacio(la 4 ocupo su lugar) con el relative */
-  /*2.su punto de referencia pasa a ser su contenedor(si esta posicionado) o el ViewProt*/
-  /*3.el contenedor se ajusta al contenido como un inline(si no se le define(se transforma en inline-block))*/
+  position: absolute; /* 1.es libre de moverse donde quiera y su origen no ocupa espacio (la 4 ocupo su lugar) como en el relative */
+  /*2.su punto de referencia pasa a ser su contenedor(si esta posicionado) o el ViewPort (si su contenedor no esta posicionado)*/
+  /*3.el objeto se ajusta a su contenido como un inline(si no se le define -> (se transforma en inline-block))*/
   top: 100px;
   left: 100px;
   z-index: 0;
+  background-image: url(https://fondosmil.com/fondo/17030.jpg); /*colocar imagenes*/
+  background-size: cover; /*lo ajusta de una manera bonita la verdad (es el más recomendable)*/
+  background-size: contain; /*no muy recomendable*/
 }
 .caja4 {
   background-color: rgb(255, 180, 180);
@@ -52,13 +54,13 @@
   background-size: none; /*por defecto*/
   background-size: contain; /*se escala a ser del tamaño de width de extremo a extremo si es una imagen landspace o tipo paisaje o tipo panoramica, si es portrait o tipo retrato o vertial entonces se escala al height*/
   background-size: cover;  /*se escala al tamaño del width si es vertical (lo contrario pero parecido a contain)*/
-  background-size: fill; /*lo ajusta a la fuerza*/
+  background-size: fill; /*lo ajusta a la fuerza (pero no funciona)*/
   padding: 30px;
   border: 5px solid #000;
   background-clip: content-box; /*(desde donde se muestra pero la recorta) tiene: content-box padding-box margin-box  (el content es desde el padding)*/
-  background-origin: content-box; /*(desde donde se muestra (no la recorta porque desde ahí la origina (claro si la colocamos recortada no se recortara más)) ) tiene las mismas que clip (generalmente es mejor origin pero da igual son opciones)*/
-  background-repeat: no-repeat; /*es porque repite fondos para completar el vacio*/
-  background-position: -10vw 0px; /*posicionar (lo movi un poso a la izquierda para centrarlo) */ /*tambien se puede con center left top bottom right (right top)*/
+  background-origin: content-box; /*(desde donde se muestra (no la recorta porque desde ahí la origina (claro que si la colocamos recortada no se recortara más)) ) tiene las mismas que clip (generalmente es mejor origin pero da igual. son opciones)*/
+  background-repeat: no-repeat; /*es porque repite fondos para completar el vacio como en la caja 3*/
+  background-position: 0px 0px; /* right bottom */
   background-attachment: scroll; /*por defecto*/
 }
 .bodyy {
@@ -67,9 +69,10 @@
   background-image: url(https://fondosmil.com/fondo/17030.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  border: 5px solid #000;
-  background-origin: content-box;
+  border: 10px solid #000;
+  padding: 100px;
+  background-origin: border-box; /*aunque tuviera padding se veria igual (por completo)*/
   background-attachment: fixed; /*la otra propiedad (buenisima)*/
-  background-position: -20vh 30vw;/*con fixed esto sirve mucho*/
+  background-position: 0vh 200px;/*(right bottom) con fixed esto sirve mucho*/
   /*se auto ajusta pareciondo que esta fijada en el fondo de la web*/
 }

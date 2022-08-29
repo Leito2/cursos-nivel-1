@@ -45,14 +45,14 @@ p::after {
 }
 
 .mi-bloque {
-  display: inline-block;
   position: absolute;
+  display: inline-block;
   width: 200px;
   height: 200px;
   background-color: gray;
   margin: 10px;
   text-align: center;
-  transition: background-color 0.5s, color 1s; /*tambien se puede colocar: all s, ..*/
+  transition: background-color 0.5s, color 1s; /*tambien se puede colocar: all como property, ..*/
 }
 
 /*al pasar el mause por encima :hover y click :active*/
@@ -106,3 +106,25 @@ input:focus {
 }
 
 /*RECORDAR QUE JAMAS ES UNA BUENA PRACTICA DEFINIR LOS COLORES DE FORMA YA DEFINIDOS*/
+
+
+/* muy muy IMPORTANTE ver la mini documentación Code Guide y poco a poco ir a documentaciones más grandes
+*/
+
+
+/*algunas pseudoclases
+:requiered  <- elementos formulario
+:valid      <- elementos formulario
+:invalid    <- elementos formulario
+:hover
+:active
+:enabled    <- elementos formulario
+:disabled   <- elementos formulario
+:focus      -. elementos formulario
+:link
+:visited
+:target     (cuando vamos un sitio en la página mediante un link, este sera targeteado)
+*/
+/*
+clear: (both, right, left) ayudan a limpiar los problemas con float (el cual es una muy mala practica usar)
+*/

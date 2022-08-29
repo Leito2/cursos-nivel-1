@@ -75,3 +75,7 @@
   width: 80px;
   margin: 10px;
 }
+/*para no heredar se puede colocar otro valor o colocar el valor initial el cual hereda solo de User Agent (valores por defecto)*/
+
+/*mistras que display: none ('borra un elemento')*/
+/*algo que también lo oculta pero conserva su espacio es visibility: hidden;*/

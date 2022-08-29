@@ -1,7 +1,7 @@
 <!-- SEO Search Engine Optimization (optimización en motores de búsqueda) -->
 
 <!-- URI (uniform resourse identificator) = URL (uniform resourse location) + URN (uniform resourse name) -->
-<!-- URI ( protocolo + subdominio + dominio + etensión + ruta relativa + URN(como un nombre de busqueda) ) -->
+<!-- URI ( protocolo + subdominio + dominio + extensión + ruta relativa + URN(es como un nombre de busqueda) ) -->
 
 
 <!DOCTYPE html> <!-- Estar en el estandar de 2004 W3C de HTML (versión 5.2 2017) -->
@@ -15,7 +15,7 @@
     id (en general unico de cada objeto para manipulacion de DOM en JS(javascript) por ejemplo)
     title (para accesibilidad que es una breve descripcion de lo que hace para que un narrador lo interprete y lo narre)
 -->
-<html lang="es"> <!-- lenguaje español='es' english='en' francés='fr'-->
+<html lang="es"> <!-- lenguaje español->'es' english->'en' francés->'fr'-->
 
 <!-- el head es lo que guarda metadatos o datos escondidos de la pagina que conforman las descripciones y SEO de la pagina -->
 <head>
@@ -29,7 +29,7 @@
     <meta name="keywords" content="html5,pagina de html,página"> <!-- palabras clave SEO -->
     <meta name="description" content="Mi página de prueba que se muestra porque tiene index.html"> <!-- descripcion SEO -->
     <meta name="author" content="Leito"> <!-- autor SEO -->
-    <meta name="copyright" content="W3C"> <!-- copyright SEO -->
+    <meta name="copyright" content="MDN"> <!-- copyright SEO -->
 
     <meta name="theme-color" content="#000"> <!-- un tema negro para celular con codigo solo hexadecimal-->
 
@@ -47,8 +47,8 @@
 
     <!--protocolos Open Graph (que se muestra a compartir el link de nuestra página)-->
     <meta property="og:title" content="Curso HTML - Leito">
-    <meta property="og:url" content="http://192.168.1.7:5500/Cursos%20nivel%201/b_curso_html5/index.html">
     <meta property="og:description" content="es una guia de mis conocimientos html5">
+    <meta property="og:url" content="http://192.168.1.7:5500/Cursos%20nivel%201/b_curso_html5/index.html">
     <meta property="og:image" content="ruta"><!--en twitter cambia a twitter:type == og:type ejmp = twitter:image (pero no es property, es name), aunque tambien tiene algunas OG--> 
     
     <title>HTML5</title> <!-- titulo de la pagina web -->
@@ -89,8 +89,8 @@
   
 <body>
 <!-- CONTENIDO DE TEXTO <hx>, <p> -->
-    <header  tabindex="1" title="header" role="heading"> <!-- accesibilidad para darle al tab y entonces dar un focus o seleccionar esa parte -->
-        <!-- TAMBIEN PARA ACCESIBILIDAD role es bueno para saber que utilidad tiene una etiqueta -->
+    <header  tabindex="1" title="header bonito" role="heading"> <!-- accesibilidad para darle al tab y entonces dar un focus o seleccionar esa parte -->
+        <!-- TAMBIEN PARA ACCESIBILIDAD role='' es bueno para saber que utilidad tiene una etiqueta -->
         <h1>HTML5</h1> <!-- headers ( Herramientas del SEO las cuales con su tamaño a priori representan su importancia en la página [del 1 al 6]) -->
         <p>HyperText Markup Language</p> <!-- contenido en texto, este no tiene importancia en la página alguna con el SEO -->
         <!-- ALGUNOS ELEMENTOS DE TEXTO EN LINEA -->
@@ -122,7 +122,7 @@
         <!--
             ARTICLE: contenido independiente el cual puede representar diferentes noticias (utilizandolo como principal)
             SECTION: contenido dependiente el cual puede representar diferentes pasos al cocinar una reseta (utilizandolo como principal)
-            ASIDE: contenido que depende te otro mayor y que puede tener contenido extra dentro de algo (en general esta entre los main, footer y header3)
+            ASIDE: contenido que depende te otro mayor y que puede tener contenido extra dentro de algo (en general esta entre los main, footer y header)
             ( tambien pueden ser section dentro de section y article dentro de article )
             >> de igual manera los article y section pueden tener sus header, main y footer
             (el article madre puede tener tambien pero el section madre no ya que si contenido es independente)
@@ -165,11 +165,12 @@
         </figure>
 <!------------->
     <header>
-        <nav>hola soy un menú</nav>k
+        <nav>hola soy un menú</nav>
     </header>
 
 <!-- ETIQUETAS MUY UTILES -->
 <!-- primero saber que href (se utiliza para establecer relaciones entre sitios en general) y src (para localizar recursos)-->
+    <main>
         <a href="ruta"></a> <!--colocar links-->
             <!-- tambien puedes colocar referencias a un ID -->
             <!-- y tambien las dos como <a href='ruta#id' ></a> -->
@@ -203,10 +204,10 @@
             <dd>Cascade Style Sheets</dd><!--dato-->
         </dl>
     <!-- <picture>
-            <source src="/Curso HTML5/assets/imagenes/gato.webp" media="(min-width:800px)">
+            <source src="/Curso HTML5/assets/imagenes/gato.webp" media="(min-width: 800px)">
             <img src="/Curso HTML5/assets/imagenes/gato-para-celulares.webp" alt="gato">
          </picture> -->
-        
+
 <!-- BLOQUES ESPECIALES -->
          <!-- Direcciones -->
         <address> <!-- forma correcta de colocar direcciones -->
@@ -217,7 +218,7 @@
         </address>
 
         <!-- Citas -->
-        <blockquote cite="https://facebook.com (si fueran más de 40 palabras"> <!-- forma correcta de sitar en el navegador y a parte tiene sangria ( <q></q> [quote] ) es lo mismo pero en linea-->
+        <blockquote cite="https://facebook.com (si fueran más de 40 palabras) "> <!-- forma correcta de sitar en el navegador y a parte tiene sangria ( <q></q> [quote] ) es lo mismo pero en linea-->
             <p>
                 <strong>cita extensa(<q cite="hecho por mí">con sangria, con o sin comillas</q>) Directa (refiriendose al contenido y al autor sin sangria y con comillas):
 
@@ -257,9 +258,10 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
         <textarea style="resize: none;">no me podes en cambiar el tamaño</textarea>
 
         <!-- En general los formularios se envian a una base de datos o son procesados por un servidor por lo que van en un FORM -->
-        <form method="post"> <!-- engloba el formulario siempre para enviarse -->
+        <form> <!-- engloba el formulario siempre para enviarse -->
 
             <!-- TEXTO -->
+            <!--mientras tag es etiqueta label es etiquetar-->
             <label for="nombre">Texto</label> <!-- 'for' para darle click y escribir en el input -->
             <input type="text" id="nombre" placeholder="nombre" minlength="2" maxlength="7" required><!--no más de 7 palabras y más de 2-->
             <!-- el typo texto es para escribir texto   -    la id tiene que ser lo mismo que si respectivo label (titulo del input) -->
@@ -298,9 +300,9 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
             <input type="hidden">
 
             <!-- FECHAS -->
-            <input type="date" required=""><!--fecha-->
-            <input type="time" required=""><!--hora--><!--datetime no se recomienda porque unos navegadores no les da-->
-            <input type="month" required=""><!--fecha--><!--week no se usa casi nunca-->
+            <input type="date" required><!--fecha-->
+            <input type="time" required><!--hora--><!--datetime no se recomienda porque unos navegadores no les da-->
+            <input type="month"><!--fecha--><!--week no se usa casi nunca-->
 
             <!-- BUSCAR -->
             <!-- es un buscador el cual así no tiene opciones para buscar -->
@@ -318,7 +320,7 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
             <button>Enviar</button>
             <input type="submit">
 
-            <!-- si te diste cuenta, dejé de conectar los labels con sus inputs -->
+            <!-- si te diste cuenta, dejé de conectar los labels con sus inputs ¿? -->
 
         </form>
 
@@ -326,7 +328,7 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
 <!-- DATA ATTRIBUTES -->
 <!--
     <input type='text'>  <----- atributos comunes
-    <input data-tipo='text'>   <---- y esto seria para yo saber que tipo es el input desde javascript si no se ingles
+    <input data-tipo='texto'>   <---- y esto seria para yo saber que tipo es el input desde javascript si no se ingles
 -->
 
 
@@ -341,7 +343,7 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
                 <label for="radio1">Hombre</label><!-- titulo de los inputs -->
                 <input id="radio1" type="radio" name="gender" value="masculino"><!--REQUIERE value porque no se escribe en ellos y hay que saber su valor-->
                 <label for="radio2">Mujer</label>
-                <input id="radio2" type="radio" name="gender" value="femenino" checked> <!-- por defecto me selecciona femenido o Mujer con checked -->
+                <input id="radio2" type="radio" name="gender" value="femenino" checked> <!-- por defecto me selecciona femenino o Mujer con checked -->
                 <label for="radio3">Desconocido</label>
                 <input id="radio3" type="radio" name="gender" value="ninguno">
 
@@ -514,7 +516,7 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
                     <td>Matemáticas</td>
                     <td>Matemáticas</td>
                 </tr>
-                <tr>
+                 <tr>
                     <td>9:30 - 10:25</td>
                     <td>Lengua</td>
                     <td>Lengua</td>
@@ -584,6 +586,21 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
 </html>
 
 <!-- 
+para definir todos los atributos
+
+1.class (clases por todo el css en ocaciones para manipular dom y por estilos de modulos etc.. (no colocar más de 3 clases))
+2.id, name (id es su propio identificador y name la variable que puede tomar en javascript por ejemplo (no usar ID's en CSS en lo posible))
+3.data-* (data-hola, data-valor, data-etc,  son atributos personalizables que pueden ser importantes)
+4.src, for, type, href, value (atributos normales)
+5.title, alt (una pequeña accesibilidad)
+6.role, aria-* (accesibilidad pura role y aria-label por ejemplo)
+7.tabindex (más accesibilidad)
+8.style (estaticamente no es bueno usarla pero si se usa este estilo en linea entonces al final)
+
+-->
+
+
+<!-- 
     SHORT CUTS:
     Control + Mayus + 7 = comentar algo
     Control + Mayus + { = tab hacia la izquierda
@@ -598,6 +615,6 @@ las tíldes es as&iacute; (&  +  (vocal)  +  acute  +  ;)
     Control + Mayus + . = quitar el puntero
     Control + + = aumenta la pantalla
     Control + - = reduce la pantalla
-    Control + Z = salto de linea automatico
     Control + D = para seleccionar todas las lineas con lineas comúnes de arriba para abajo como con alt + click
+    Alt + Z = salto de linea automatico
  -->
