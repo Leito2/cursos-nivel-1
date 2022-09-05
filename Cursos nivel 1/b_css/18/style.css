@@ -2,13 +2,20 @@
   width: 90vw;
   height: 90vh;
   padding: 30px;
-  background-color: #aaa;
+  background: #aaa;
   margin: 30px;
   position: relative;
 }
 
 .caja {
-  transition-property: left, background; /*que parte realiza un cambio*/
+  background-color: inherit; /*hereda el color del padre, por lo que sera gris clarito osea #aaa (diferente a transparent) */
+  border: thick outset gray;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+
+
+  transition-property: left, background-color; /*que parte realiza un cambio*/
   /*aca selecciono all o puedo de una en una las propiedades que cambian en el hover*/
   transition-duration: 1s, 0.5s; /*lo que tarda en hacerse ña ejecución*/
   transition-delay: 0.5s, 0s; /*tarda en comenzar a ejecutar*/
@@ -16,8 +23,11 @@
 
   /*hize que en 0.5 cambie el background y luego en 1 segundo la animación de desplazamiento*/
 
-  /*transition property, duracion y delay puede ser util condensarlas así:*/
-  transition: left 1s 0.5s, background 0.5s 0s;/*la segunda puede quedar background 0.5s*/
+  /*transition: property, duracion y delay puede ser util condensarlas así:*/
+  transition: left 1s 0.5s, background-color 0.5s 0s;/*la segunda puede quedar background 0.5s*/
+  /*tambien:*/
+  /*transition: property duration timing-function*/
+  /*transition: property duration timing-function delay*/
   /*si no queremos delay solo dejamos 2 parametros*/
 }
 .uno {
@@ -41,6 +51,7 @@
   left: 0;
 }
 .cinco {
+  transition-timing-function: steps(5); /*otra propiedad para timing-function*/
   transition-timing-function: ease-in-out;/*comienza y termina lento pero en la mitad es rapido*/
   position: relative;
   left: 0;
@@ -68,14 +79,13 @@
   left: 80%;
 }
 
-.caja {
-  background-color: inherit; /*hereda el color del padre, por lo que sera gris clarito osea #aaa (diferente a transparent) */
-  background-color: #666;
-  height: 80px;
-  width: 80px;
-  margin: 10px;
-}
 /*para no heredar se puede colocar otro valor o colocar el valor initial el cual hereda solo de User Agent (valores por defecto)*/
 
 /*mistras que display: none ('borra un elemento')*/
 /*algo que también lo oculta pero conserva su espacio es visibility: hidden;*/
+
+/*no usar all NUNCA porque causa efectos no deseables(causa transición en otras propiedades que no estan especificamente en hover o active o algo así) y no modulariza*/
+
+/*tambien hay errores que animan cosas al inicio lo cual es por especificida y tener distintas propiedades redefinidas*/
+
+/*hay propiedades no animables*/

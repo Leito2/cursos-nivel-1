@@ -1,86 +1,74 @@
-/*para crear globales*/
-:root {
-  --color-rojo: #f55;
+/* Transform */
+
+.contenedor {
+  width: 90vw;
+  height: 90vh;
+  padding: 30px;
+  background-color: #aaa;
+  margin: 30px;
+  position: relative;
 }
-p {
-  --color-parrafo: #333;
-}
-div {
-  width: 100px;
-  height: 100px;
+
+.caja {
+  position: relative;
+  background-color: #555;
+  height: 80px;
+  width: 80px;
   margin: 10px;
-  background-color: var(--color-rojo);/*esta es global*/
-}
-p {
-  color: var(--color-parrafo);/*solo para parrafos*/
-}
-/*crear variables depende de donde se define solo son globales si se crean en :root (raiz)*/
-
-/*algunas cosas de FILTER*/
-.main {
-  background-color: #ddd;
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-img:first-child {
-  filter: blur(2px); /*por medidas un desenfoque uniforme*/
-}
-img:nth-child(2) {
-  filter: brightness(3);/*brillo el cual puede tener más con valores más grandes de 1*/
-}
-img:nth-child(3) {
-  filter: brightness(0,4);/*menos brillo numero de (0,1)*/
-}
-img:nth-child(4) {
-  filter: contrast(0.5);/*lo mismo que el brillo pero con contraste o máyor profundidad de colores (tiran para #000 y un poco a #f00, #0f0, #00f)*/
-}
-img:nth-child(5) {
-  filter: drop-shadow(10px 10px 8px #ff5); /*sombra a las imagenes svg o png transparentes*/
-  /*igual que esto digamos*/
- /*  box-shadow: 10px 10px      5px       black;    */
-/*                x    y    difuminado    color    */
-}
-img:nth-child(6) {
-  filter: grayscale(0.8); /*de 0 a 1 o con porcentajes*/
-}
-img:nth-child(7) {
-  filter: hue-rotate(330grad); /*rotar la gamma o matiz de colores con gradianes(grad) , grados (deg) o radianes (rad)*/
-}
-img:nth-child(8) {
-  filter: invert(90%);/*invertir los colores*/
-  /*el 50% es un gris ya que como todos los invertidos tienen su opuesto lo cual implica que si negro pasa a blanco su medio sera gris y un verde opuesto a otro no dara un verde especifico sino otro gris*/
-}
-/*
-filter: opacity(0.5); <- la opacidad ya la vimos y es como:
-opacity: 0.5;
-*/
-img:nth-child(9) {
-  filter: saturate(3);/*colores más vivos que van al #f00, #0f0, #00f*/
+/*para activar 3d*/
+.contenedor {
+  perspective: 10rem;
+  transform: perspective(10rem);/*existe pero no sirve mucho*/
 }
 
-/* EL ULTIMO QUE NO PUDE COLOCARLO ES sepia(1) y sepia(0) el cual es una escala de grises amarillos*/
+.caja:nth-child(1) {
+  transition: transform 2s ease-in-out 0s;
+}
+.caja:nth-child(1):hover {
+  transform: translateZ(1rem);
+}
 
-/*es un matiz café-anaranjado el cual se llama sepia por la similitud del pigmento obtenido de un animal similar al calamar*/
+.caja:nth-child(2) {
+  transition: transform 1s ease-in-out 0s;
+}
+.caja:nth-child(2):hover {
+  transform: translate3d(3rem, -3rem, -10rem);/*xyz*/
+}
 
-/*dato*/
-/*short hand de animation
+.caja:nth-child(3) {
+  transition: transform 1s ease-in-out 0s;
+  transform-origin: 0 0 0; /*xyz*/ /*desde 0 0 arriba izquierda -> cambiar el origen de rotacion 3d y 2d*/
+  transform-origin: top left; /*lo mismo*/
+}
+.caja:nth-child(3):hover {
+  transform: scale3d(0.8, 0.5, 0.00001);/*xyz (los encoje en 3 dimenciones)(z cercano a 0 no hace nada porque estamos en 2d)*/
+}
+.caja:nth-child(3):active { /*AL HACER CLICK*/
+  transform: scale3d(0.8, 0.5, 0.00001) rotate(0.5rad); /*las 2 a la vez (la del hover y la de click)*/
+}
 
-animation: name duration direction iteration-count
+.caja:nth-child(4) {
+  margin: 0 auto;
+  background-image: url(https://i.pinimg.com/736x/55/c6/a6/55c6a62e8253a8525036abb885ab5b7d.jpg);
+  background-size: cover;
+  transition: transform 1s ease-in-out 0s;
+}
+.caja:nth-child(4):hover {
+  transform: rotateX(45deg);
+}
+.caja:nth-child(4):active { /*AL HACER CLICK*/
+  transform: rotateY(45deg);/*turn es 360°*/
+}/*el rotareZ ya seria el default*/
 
+/*resumen:
+perspective
+transform:
+  translate3d(x, y, z) (medidas)
+  scale3d(x, y, z) (valores)
+  rotateX(x) (angulos)
+  rotateY(y) (angulos)
 */
 
-/*
-el contraste alto con un fondo blanco
-y un blur medio alto en 2 objetos
-crea un efecto de gota
-
-(ya que se coloca transparente la parte blur y cuando se superponen 2 partes blur se crea un color que las une como si fue una gota despegandose)
-*/
+/*por comas podemos colocar multiples (las 3 al tiempo si quieres)*/

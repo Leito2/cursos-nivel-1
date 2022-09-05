@@ -31,10 +31,12 @@
 }
 
 .caja:nth-child(4) {
+  /*puedes unir las transformaciones*/
   /*lo coloca chiquito y luego lo estira un poco como antes (en horizontal)*/
   transform: scale(0.5) scaleX(2) translateY(20px); /*más grande o menos grande*/
+  /*     lo mimso->    scale(1, 0.5)          */
+  /*                         x, y            */
   /*despues de escalarlo a la mitad, par que una parte de el como la X vuelva a la normalidad hay que escalarlo al doble*/
-  /*puedes unir las transformaciones*/
 }
 
 .caja:nth-child(5) {
@@ -45,6 +47,7 @@
 .caja:nth-child(6) {
   transform: skew(30deg) translate(-5px, 10px) scale(0.5);
   /*skew sirve para poder deformar un poco los objedos de lado a lado*/
+  /*hay skewX y skewY*/
 }
 
 
@@ -72,3 +75,7 @@
 
 /*translete es lo mejor para hacer animaciones o transitions con movimiento o otras cosas*/
 /*ya que esto no consume casi recursos ya que esta dedicado a ello*/
+
+/*hay rotateZ (por defecto)
+rotateY, rotateX
+*/

@@ -1,0 +1,59 @@
+/* EXTRAS */
+html {
+  scroll-behavior: smooth; /*transición suave*/
+  scroll-snap-type: none; /*inline(x) | block(y) | both , proximity | mandatory */
+  scroll-snap-type: block proximity;
+}
+#aca {
+  color: white;
+  background-color: gray;
+  scroll-margin-top: 100px; /*dejar 100 pixeles arriba*/
+/*  scroll-snap-align: center | end | start; <-- para que el snap type funcione*/
+  scroll-snap-align: start;/*se ajusta (con mandatory se "bugea" porque necesita más objetos con esta propiedad)*/
+}
+p:first-child {
+  direction: rtl;/*por defecto es ltr*/
+  letter-spacing: 5px; /*I M P O R T A N T E sirve mucho es para separar por pixeles o medidas letra y letra*/
+  user-select: none;/*no poder seleccionar algo*/
+}
+/*:valid cuando un input es correcto*/
+
+/*carusel de imagenes*/
+
+.carusel {
+  border: 5px solid #000;
+  overflow-x: hidden;/*lo escondo en el contenedor mayor para que el efecto sea limpio*/
+  width: 50%;
+  height: 50vh;
+  margin: 50px auto;
+}
+
+.carusel-contenedor {
+  display: grid;
+  grid-template-columns: repeat(5, 100%);
+  border: 4px solid #555;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;/*cuando se vaya a hacer un efecto snap en x o en y, su overflow tiene que estar en scroll*/
+  overflow-y: hidden;
+  scroll-snap-type: inline mandatory;
+}
+.carusel-slide-content {
+  font-size: 40px;
+  padding: 30px;
+  border: 10px solid #9996; /*el contenido*/
+  scroll-snap-align: center;
+}
+
+.carusel-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcoral;
+}
+.carusel-slide:nth-child(even) {
+  background-color: lightsalmon;
+}
+/*se pueden mover con las flechitas*/
+/*sin javascript*/
