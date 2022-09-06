@@ -1,0 +1,50 @@
+.load {
+  width: 4vw;
+  height: 4vw;
+  margin: 40px auto;
+  border-radius: 50%;
+  border: 0.5vw solid #0003;
+  border-top-color: #09f;
+  animation: spinner 1s ease-out infinite;
+}
+@keyframes spinner {
+  from  {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input {
+  border: none;
+  transition: outline 0.1s ease;
+}
+input:focus {
+  border: none;
+  outline: 3px solid #888;
+}
+.input {
+  position: relative;
+  display: inline-block;
+  left: 30%;
+  margin: 40px auto;
+  border: 0.5vw solid #0003;
+  transition: border-color 0.5s ease;
+}
+.input:hover {
+  border-color: #0005;
+}
+.input::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0.2rem;
+  background-color: #f88;
+  transition: width 0.5s ease-out;
+}
+/*hover a input entonces a el hover...*/
+.input:hover::before {
+  width: 100%;
+}

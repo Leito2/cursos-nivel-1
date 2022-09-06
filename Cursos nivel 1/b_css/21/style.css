@@ -70,5 +70,10 @@ transform:
   rotateX(x) (angulos)
   rotateY(y) (angulos)
 */
+/*una propiedad util para tener 2 imagenes 2d una y otra atras es:
+transform-style: preserve-3d;
+y en el contendedor:
+backface-visibility: hidden | visible;
+*/
 
 /*por comas podemos colocar multiples (las 3 al tiempo si quieres)*/

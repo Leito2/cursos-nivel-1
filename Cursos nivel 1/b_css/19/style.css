@@ -22,9 +22,10 @@
   animation-timing-function: ease;
   animation-direction: reverse; /*por defecto es (normal), si quieres ir de to a from es (reverse), las dos es (alternative),  y las 2 pero comienza con reverse (alternative-reverse)*/
   /*modo final (cuando termina)*/
-  animation-fill-mode: backwards; /*inicio*/
+  animation-fill-mode: none; /*se queda como se definico antes (no al inicio de la animación(la cual inicia cuando carga toda la página))*/
+  animation-fill-mode: backwards; /*se queda como inició*/
   animation-fill-mode: forwards;/*se queda como finaliza */
-  animation-fill-mode: both; /*para que termina como forwards (como terminó), pero inicia con from y no queda con valores que antes venian definidos*/
+  animation-fill-mode: both; /*para que termina como forwards (como terminó), pero inicia con from y no queda con valores que antes venian definidos(la mejor propiedad para muchos)*/
   /*short hand no muy recomendable*/
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: desplazarse 1s ease 0s 1 reverse both;
@@ -89,7 +90,7 @@
 
 .caja3 {
   position: relative;
-  background-color: #aaa ;
+  background-color: #aaa;
   height: 80px;
   width: 80px;
   margin: 10px;
@@ -101,4 +102,14 @@
   animation-timing-function: cubic-bezier(0, 1.32, 1,-0.14); /*pueden hacer este tipo de cosas*/
 
   /*si quieres complicarte o descomplicarte podes bucar generador de curvas bezier*/
+  animation-play-state: running ; /*paused (es la otra y se utiliza en javascript)*/
 }
+.caja3:active {
+  animation-play-state: paused;
+}
+
+/*
+shorthands buenas
+aniamtion: name duration iteration-count;
+aniamtion: name duration iteration-count timing-function;
+*/
