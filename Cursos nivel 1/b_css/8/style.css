@@ -18,8 +18,7 @@
 }
 .flex-container {
   flex-wrap: wrap;
-  align-content: stretch; /*por defecto*/
-  align-content: flex-start; /*alinearlas arribita*/
+  align-content: flex-start;
 }
 /*PROPIEDADES DE LOS ITEMS FLEXIBLES*/
 .flex-item:nth-child(1) {
@@ -34,10 +33,10 @@
 */
 /*flex grow (proporciones del espacio que sobre)*/
 .flex-item {
-  flex-grow: 1; /*esto crea una necesidad flex: 1(short hand) de estirarse*/
+  flex-grow: 1; /*esto crea una necesidad flex: 1(short hand) de estirarse (si sobra espacio)*/
 }
 .flex-item:nth-child(8) {
-  flex-grow: 2; /*esto es el espacio que se dan cada una a pardir de 120px por la cantidad de cajas porque el espacio que sobra si hay 400 pixeles y hay tres cajas es de 40 pixeles, en este caso 2 cajan medirian 130px y la que tiene grow 2 mide 140px*/
+  flex-grow: 2; /*esto es el espacio que se dan cada una a partir de 120px por la cantidad de cajas porque el espacio que sobra si hay 400 pixeles y hay tres cajas es de 40 pixeles, en este caso 2 cajan medirian 130px y la que tiene grow 2 mide 140px     |120|120|120| 40 espacio |  ->  |130|130|130|140|     */ 
 }
 /* aca todas las cajas tienen un minimo de 120px y si el espacio fuerza a la caja a bajar es por la propiedad wrap, sin empbargo cuando se utiliza una propiedad similar a width la cual es especial para flex-items osea flex-basis, entonces ahora el minimo para que utilice wrap es los 120px y un poco maś justo cuando el espacio que sobra es igual a la mitad del width de una caja*/
 /*en resumen es como un width de los objetos flexibles configurable en la que la cual las cajas quieren llegar a medir 120px*/
@@ -65,13 +64,14 @@
   width: 100px;
   min-width: 100px; /*les tengo para que minimo sean de 100px y si no se salen de la pantalla*/
   flex-grow: 1;
-  flex-basis: 120px; /*a partir de ese min-width todas tratan de llegar lo más rapido posible as soon as posible a 120px*/
-  flex-shrink: 1; /*el espacio que seden o permiten cada una se define por shrink pot lo que si se tiene 0 (no sede espacio y se queda en 120px) si tiene un número alto (sede mucho espacio por lo que al inicio se queda atras de tamaño) pero todas llegan al mismo tiempo a 120px menos la que tinen 0 de shrink*/
+  flex-basis: 120px; /*a partir de ese width todas tratan de llegar lo más rapido a 120px*/
+  flex-shrink: 1; /*el espacio que seden o permiten cada una se define por shrink por lo que si se tiene 0 (no sede espacio y se queda en 120px) si tiene un número alto (sede mucho espacio por lo que al inicio se queda atras de tamaño) pero todas llegan al mismo tiempo a 120px menos la que tinen 0 de shrink*/
   flex: 1 1 120px; /*short hand el cual es ( grow shrink basis )*/
 }
 .d0s:nth-child(1) {
   background-color: lightskyblue;
   flex-shrink: 0;
+  order: 1;/*pasa a estar en el final (por defecto todas traen 0 y su orden se tenermina por el orden de la aparición del DOM)*/
 
 }
 .d0s:nth-child(4) {
@@ -86,5 +86,8 @@ flex-shrink: cuando no hay wrap el espacio que falta y dependiendo si tiene min-
 flex-basis: es un width flexible el cual tiene un tanto propiedades distintas pero es colo la raya entre shrink y grow
 
 flex: grow shrink basis
+
+valores por defecto: 
+flex: 0 1 auto;
 
 */

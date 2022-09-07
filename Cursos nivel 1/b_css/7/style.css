@@ -1,5 +1,5 @@
 .flex-container {
-  display: flex;
+  display: flex; /*o tambien inline-flex (pasa a ser contenedor bloque a inline)*/
   width: 100vw;
   height: auto;
 }
@@ -44,18 +44,18 @@ _______________MAIN AXIS_____________________
 }
 /*Si quieres que el contenedor con display flex tire las cajas que tiene adentro hacia abajo ya que la cross axis esta por defecto hacia abajo*/
 .flex-container {
-  flex-wrap: wrap; /*luego tambien hay wrap-reverse*/
+  flex-wrap: wrap; /*tambien hay wrap-reverse*/
 }
 .flex-item {
   flex: 1;
 }
 /*UNA SHORT HAND PARA:
-FLEX-DIRECCION: row, row-reverse, column, column-reverse
+FLEX-DIRECCION: row | row-reverse | column | column-reverse
 Y
-FLEX-GRAP: nowrap, wrap, wrap-reverse
+FLEX-WRAP: nowrap | wrap | wrap-reverse
 ES
-flex-flow: flex-direction flex-wrap;
+flex-flow: flex-direction, flex-wrap;
 */
 .flex-container {
- flex-flow: row wrap;
+ flex-flow: row wrap; /*el shorthand que resume este modulo*/
 }

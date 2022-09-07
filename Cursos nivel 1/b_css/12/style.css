@@ -27,7 +27,7 @@ para la proxima mirar como se usa auto-fill y auto-fit para tambien controlar es
   grid-gap: 5px; 
   grid-auto-flow: row; /*por defecto se crean nuevas filas cuando no caben las celdas*/
 /*para decir cual va a ser el tamaño de esas nuevas filas:  ...*/
-grid-auto-rows: 100px; /*las nuevas filas COMPLETAS van a ser de 100px (aca no se usa repeat() )*/
+  grid-auto-rows: 100px; /*las nuevas filas COMPLETAS van a ser de 100px (aca no se usa repeat() )*/
 }
 .grid-items-dos {
   background-color: #bbb;
@@ -103,4 +103,4 @@ grid-column: 1 / 4
 grid-column: 1 / span 3
 */
 
-/*las dos son manera muy distintas de arreglar pero esto es para dominar conceptos*/
+/*las dos son manera muy distintas de arreglar pero esto es para dominar conceptos nada maś*/

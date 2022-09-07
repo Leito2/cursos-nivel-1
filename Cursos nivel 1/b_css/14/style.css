@@ -41,7 +41,7 @@ align-self
 }
 .grid-items:nth-child(5) {
   align-self: center;
-  justify-self: center;
+  justify-self: center; /*podria dejarlo sin esas 2 propiedade porque por defecto la los coloqué center todos*/
   background-color: aquamarine;
 }
 .grid-items:nth-child(6) {
@@ -76,7 +76,7 @@ place-content: (align) (justify);
 
 /*aca igual hay order como en flex
 
-order se tiene que colocar al inicio para poder estructural de mejor manera o poner con js de manera automatica, order 0 seria el por defecto y si colocamos a algo el order 1 entonces se iria PARA DONDE ESTA EL -> 9
+order se tiene que colocar al inicio para poder estructurar de mejor manera o poner con js de manera automatica, order 0 seria el por defecto y si colocamos a algo el order 1 entonces se iria PARA DONDE ESTA EL -> 9
 
 I M P O R T A N  T E
 

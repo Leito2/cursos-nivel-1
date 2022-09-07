@@ -42,23 +42,21 @@ grid-auto-columns: 100px;
 
 justify-content: (baseline, auto, center, space-around, space-between, space-evenly, right, left)
 
-tambien se puede utilizar en realidad justify-items
-
 y para alinear verticalmente si tenemos 1 fila o columna: 
 
-align-items: (flex-start, flex-end, stretch, baseline, center, space-between, space-around, space-evenly)
+align-items: (flex-start, flex-end, stretch, baseline, center)
 
 y para alinear verticalmente si tenemos varias fila o columnas: 
 
-align-content: (flex-start, flex-end, stretch, baseline, center, spaces también)
+align-content: (flex-start, flex-end, stretch, baseline, center, space-between, space-around, space-evenly)
 
 */
 
 /* PARA GRID TENEMOS ALGO PARECIDO
 
-1. justify-items (algo son las cendas y algo son los items por lo que el item es igual de alto y acho que colo lo definamos o su contenido (por defecto es igual a las celdas que ocupa) )
-2. align-items
-
+1. justify-items (algo son las celdas y algo son los items, por lo que el item es igual de alto y ancho como lo definamos, o su contenido (por defecto es igual a su contenido))
+2. align-items (lo mismo pero verticalmente)
+(estos no tienen los spaces)
 */
 
 .grid-container-dos {

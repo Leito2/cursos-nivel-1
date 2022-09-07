@@ -2,7 +2,7 @@
 .grid-container {
   display: grid;
   grid-template-rows:
-    [a-line] /*ombrando las lineas a la ora de hacer las rows*/
+    [a-line] /*nombrando las lineas a la hora de hacer las rows*/
     200px
     [b-line]
     200px
