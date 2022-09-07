@@ -4,6 +4,7 @@
 .grid-container {
   width: 100vw; /*podes definir width si queres o height si quieres*/
   background-color: #888;
+  display: inline-grid;/*grid en linea*/
   display: grid;/*se comporta como un tipo de tabla y por defecto se encuentra con grids implícitos los cuales en la siguiente siguiente seccion aprenderemos a controlar con grid-auto-rows y grid-auto-columns*/
   grid-template-columns: 150px 150px 150px; /*crear 3 columnas de 150px de width*/
   grid-template-columns: repeat(3, 150px);/*repite 3 veses lo de la recha por lo que es lo mismo que lo de arriba*/

@@ -24,9 +24,9 @@ para la proxima mirar como se usa auto-fill y auto-fit para tambien controlar es
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
   grid-template-rows: repeat(3, 150px);
-  grid-gap: 5px; 
+  gap: 5px;/*ahora es mejor usar gap*/ 
   grid-auto-flow: row; /*por defecto se crean nuevas filas cuando no caben las celdas*/
-/*para decir cual va a ser el tamaño de esas nuevas filas:  ...*/
+/*para decir cual va a ser el tamaño de esas nuevas filas entonces:*/
   grid-auto-rows: 100px; /*las nuevas filas COMPLETAS van a ser de 100px (aca no se usa repeat() )*/
 }
 .grid-items-dos {
@@ -34,7 +34,7 @@ para la proxima mirar como se usa auto-fill y auto-fit para tambien controlar es
 }
 
 
-/*ahora para crear nuevas celdas*/
+/*ahora para crear nuevas celumnas*/
 
 .grid-container-tres {
   margin-top: 100px;
@@ -45,7 +45,7 @@ para la proxima mirar como se usa auto-fill y auto-fit para tambien controlar es
   grid-template-rows: repeat(3, 150px);
   grid-gap: 5px; 
   grid-auto-flow: column; /* vamos a por defecto crear columnas cuando se haga un exceso de celdas en la matriz que nosotros creamos */
-  grid-auto-columns: minmax(100px, 1fr);/*crea en exceso de celdas (columnas de 100px y maximo lo que coja de exceso dividido las 4 columnas, es colo un flex-grow: 1)*/
+  grid-auto-columns: minmax(100px, 1fr);/*crea en exceso de celdas (columnas de 100px y maximo lo que coja de exceso dividido las 4 columnas, es como un flex-grow: 1)*/
 }
 .grid-items-tres {
   background-color: #bbb;
@@ -53,7 +53,8 @@ para la proxima mirar como se usa auto-fill y auto-fit para tambien controlar es
 
 /*2 manera fundamentales para rellenar esos espacios, o si se daña muy feo la matriz
 1.con grid-auto-flow: dense (si se daña feo)
-2.haciendo span o asignando rangos de row-lines y column-lines. (para rellenar como queramos)*/
+2.haciendo span o asignando rangos de row-lines y column-lines. (para rellenar como queramos)
+bonus.no ser pendejo y saber cuando usar grid y usar grid area a ser posible para evitar esto*/
 
 .grid-container-cuatro {
   margin-top: 100px;
@@ -90,6 +91,7 @@ para la proxima mirar como se usa auto-fill y auto-fit para tambien controlar es
   grid-template-rows: repeat(3, 150px);
   grid-gap: 5px;
   grid-auto-flow: dense; /*lo arreglamos de una manera automatica*/
+  grid-auto-flow: row dense;/*lo mismo (tambien hay column dense el cual arregla pero crea columnas por lo que mete a el item 10 a la derecha en una nueva columna)*/
   grid-auto-rows: 100px; /*creamos la fila de abajo*/
 }
 .grid-items-cinco {

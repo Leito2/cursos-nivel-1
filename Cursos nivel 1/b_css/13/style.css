@@ -128,5 +128,7 @@ align-content: (flex-start, flex-end, stretch, baseline, center, space-between, 
 .grid-container-cuatro {
   justify-content: end; /*se puede con start, con baseline, con end, con space-between, etc...*/
   align-content: space-between; /*tambien se suma end y start*/
+  /*tambien*/
+  place-content: space-between end;/*align luego justify*/
 }
 /*el between en las filas y columnas se nota pero el center tambien esta solo es cuention de inspeccionar los elementos pero si estan centrados también*/

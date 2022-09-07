@@ -1,24 +1,27 @@
 /*GRID AREAS*/
+/*Y SOBREPOSICIÓN DE GRID AREAS*/
 .grid-container {
-  display: grid;
+  display: inline-grid;
   grid-template-rows:
     [a-line] /*nombrando las lineas a la hora de hacer las rows*/
-    200px
+    150px
     [b-line]
-    200px
+    150px
     [c-line]
-    200px
+    150px
     [d-line]
-    200px
-    [e-line];
+    150px
+    [d-line];
   grid-template-columns:
     [A-line] /*estos nombres pueden utilizarse luego*/
-    200px
+    150px
     [B-line]
-    1fr
+    150px
     [C-line]
-    200px
-    [D-line];
+    150px
+    [D-line]
+    150px
+    [E-line];
   background-color: #444;
   border: 2px solid #333;
 }
@@ -31,24 +34,27 @@
 .grid-item:first-child {
   background-color: #f54;
 /*  grid-row: 1 / 3; */
-  grid-row: b-line / d-line; /*o de esta manera con las lineas*/
+  grid-row: a-line / c-line; /*o de esta manera con las lineas*/
 /*  grid-column: 1 / 3; */
-  grid-column: A-line / B-line;
+  grid-column: A-line / C-line;
 }
 .grid-item:nth-child(2) {
   background-color: #5f6; /*colores matecito*/
-  grid-row: a-line / b-line;
-  grid-column: A-line / D-line;
+  grid-row: a-line / c-line;
+  grid-column: C-line / E-line;
 }
 .grid-item:nth-child(3) {
   background-color: #67f;
   grid-row: b-line / d-line;
   grid-column: B-line / D-line;
+  opacity: 0.9;
+  order: 1 ; /*para que se ponga al frente*/
 }
 .grid-item:nth-child(4) {
   background-color: #f7f;
-  grid-row: d-line / e-line;
-  grid-column: A-line / D-line;
+  grid-row: c-line / e-line;
+  grid-column: A-line / E-line;
+  grid-area: c-line / e-line A-line / E-line;/*lo mismo (para repasar)*/
 }
 
 /*para organizar en una matriz de 3x3 y poder utiliar mejor las grid-area, nombro las lineas y luego relleno todos los espacion con mi insuficiencia de items (utilice 4 para llenar el resto de celdas y no tener un exceso y tener que generarlos automaticos porque sino no podría nombrarlos)*/

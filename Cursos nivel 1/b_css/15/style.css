@@ -5,7 +5,7 @@
   'header header header'
   'aside main main'
   'aside main main'
-  'aside main main'
+  '. main main' /*los puntos dejan el espacio vacio*/
   'footer footer footer';
   /*por defecto esas 3 columnas y 4 filas que se crean son como de 1 fr o similar*/
   /*ya que se crea 4 filas*/
@@ -24,6 +24,7 @@
 .grid-header {
   background-color: lightgreen;
   grid-area: header;
+  /*se puede usar así o como grid-area: rows columns; */
 }
 ul li {
   display: inline-block;
