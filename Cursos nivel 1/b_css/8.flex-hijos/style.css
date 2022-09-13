@@ -1,0 +1,93 @@
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.flex-item {
+  background-color: lightblue;
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  margin: 10px;
+}
+.flex-item:nth-child(1) {
+  background-color: lightskyblue;
+}
+.flex-item:nth-child(8) {
+  background-color: lightgray;
+}
+.flex-container {
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+/*PROPIEDADES DE LOS ITEMS FLEXIBLES*/
+.flex-item:nth-child(1) {
+  align-self: stretch;/*por defecto (ademas de align-items y align-content, esta align-self y tambien lo que se vio de justify-content)*/
+/*los demás valores funcionan cuando solo se tiene un fila y sin wrap*/
+}
+
+/*el margin funciona de esta manera:
+1. si colocamos margin-left: auto (del espacio que tiene entre izquierda y derecha saca una media pero como no definimos margin right entonces se coloca todo en la izquierda (la caja se va para la derecha del todo))
+2. si colocamos margin: auto (se va para el centro porque ya que todos los margin estan en automatico se sacan la mitad entre todos y se centra)
+
+*/
+/*flex grow (proporciones del espacio que sobre)*/
+.flex-item {
+  flex-grow: 1; /*esto crea una necesidad flex: 1(short hand) de estirarse (si sobra espacio)*/
+}
+.flex-item:nth-child(8) {
+  flex-grow: 2; /*esto es el espacio que se dan cada una a partir de 120px por la cantidad de cajas porque el espacio que sobra si hay 400 pixeles y hay tres cajas es de 40 pixeles, en este caso 2 cajan medirian 130px y la que tiene grow 2 mide 140px     |120|120|120| 40 espacio |  ->  |130|130|140|     */ 
+}
+/* aca todas las cajas tienen un minimo de 120px y si el espacio fuerza a la caja a bajar es por la propiedad wrap, sin empbargo cuando se utiliza una propiedad similar a width la cual es especial para flex-items osea flex-basis, entonces ahora el minimo para que utilice wrap es los 120px y un poco maś justo cuando el espacio que sobra es igual a la mitad del width de una caja*/
+/*en resumen es como un width de los objetos flexibles configurable en la que la cual las cajas quieren llegar a medir 120px*/
+.flex-item {
+  flex-basis: 120px; /*Direccion row esto es un width. Direccion column esto es un height*/
+}
+/*esta propiedad se puede acompañar de flex-shrink*/
+.flex-item {
+  flex-basis: 120px;
+  flex-shrink: 1; /*esto significa cuando ceden de espacio los items, solo da cuando quitamos el wrap*/
+}
+
+/*como a continuación*/
+
+.dos {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-flow: row nowrap;
+  align-content: flex-start;
+}
+.d0s {
+  background-color: lightblue;
+  height: 100px;
+  width: 100px;
+  min-width: 100px; /*les tengo para que minimo sean de 100px y si no se salen de la pantalla*/
+  flex-grow: 1;
+  flex-basis: 120px; /*a partir de ese width todas tratan de llegar lo más rapido a 120px*/
+  flex-shrink: 1; /*el espacio que seden o permiten cada una se define por shrink por lo que si se tiene 0 (no sede espacio y se queda en 120px) si tiene un número alto (sede mucho espacio por lo que al inicio se queda atras de tamaño) pero todas llegan al mismo tiempo a 120px menos la que tinen 0 de shrink*/
+  flex: 1 1 120px; /*short hand el cual es ( grow shrink basis )*/
+}
+.d0s:nth-child(1) {
+  background-color: lightskyblue;
+  flex-shrink: 0;
+  order: 1;/*pasa a estar en el final (por defecto todas traen 0 y su orden se tenermina por el orden de la aparición del DOM)*/
+
+}
+.d0s:nth-child(4) {
+  background-color: lightgray;
+  flex-shrink: 3; /*en un momento esta caja tienen 107 de tamaño y sus otras 2 cajitas hermanas azules tienen 115 de tamaño, el doble que esta cajita*/
+}
+
+/*RESUMEN*/
+/*
+flex-grow: cuando sobra espacio mientras más alto más espacio se lleva y en 0 no se lleva
+flex-shrink: cuando no hay wrap el espacio que falta y dependiendo si tiene min-width, es espacio mientras menos se lleva una caja es porque más sedimiento shrink tiene y en 0 no cede espacio por lo que se coloca en el width definido o el flex-basis definido
+flex-basis: es un width flexible el cual tiene un tanto propiedades distintas pero es colo la raya entre shrink y grow
+
+flex: grow shrink basis
+
+valores por defecto: 
+flex: 0 1 auto;
+
+*/

@@ -1,0 +1,130 @@
+/*PSEUDOCLASES Y PSEUDOELEMENTOS estos con más jerarquía que las clases y elementos*/
+.mi-bloque-de-texto {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  margin: 10px;
+  text-align: center;
+}
+/*Primero: los pseudo elementos son parte de un elemento
+Segúndo: los pseudo elmentos comienzan con ::pseudo-elemento
+Tercero: se pueden editar un pseudo elemento por lo cual pueden ser un tanto independientes del elemento principal*/
+
+/* En texto
+::first-line   | no funciona en inline
+::first-letter | no funciona en inline
+::selection
+
+*/
+
+.mi-bloque-de-texto::first-line {
+  color: aqua;
+}
+
+.mi-bloque-de-texto::first-letter {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.mi-bloque-de-texto::selection {
+  background-color: white;
+  color: black;
+}
+/*estos se comportan como elementos en linea*/
+
+/*AFTER Y BEFORE*/
+/*necesita el atributo 'content' para añadir algo antes y despues*/
+p::before {
+  content: "hola, ¿";
+}
+
+p::after {
+  content: " estas?";
+  color: rebeccapurple;
+}
+
+.mi-bloque {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  margin: 10px;
+  text-align: center;
+  transition: background-color 0.5s, color 1s; /*tambien se puede colocar: all como property (ni cagando se recomienda), ..*/
+}
+
+/*al pasar el mause por encima(:hover) y click(:active)*/
+
+.mi-bloque:hover {
+  background-color: black;
+  color: gray;
+}
+.mi-bloque:active {
+  color: green;
+}
+
+a {
+  position: absolute;
+  top: 450px;
+  left: 60px;
+}
+/*link y visited*/
+a:link { /*un link por defecto*/
+  color: blue;
+}
+a:visited { /*un link cuando ya fué visitado*/
+  color: rebeccapurple;
+}
+
+/*aplica a los input :focus*/
+input {
+  position: absolute;
+  top: 30px;
+  left: 300px;
+}
+input:focus {
+  background-color: lemonchiffon;
+}
+/*lang (se le coloca en html y se puede editar en css)*/
+/*esto no se usa nunca practicamente*/
+.mi-bloque-2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 60px;
+  left: 300px;
+  background-color: gray;
+  margin: 10px;
+  text-align: center;
+}
+
+.mi-bloque-2 u:lang(raro) {
+  /*los lenguajes podrian ser es(español), en(english)*/
+  color: lightblue;
+}
+
+/*RECORDAR QUE JAMAS ES UNA BUENA PRACTICA DEFINIR LOS COLORES DE FORMA YA DEFINIDOS*/
+
+
+/* muy muy IMPORTANTE ver la mini documentación Code Guide y poco a poco ir a documentaciones más grandes
+*/
+
+
+/*algunas pseudoclases
+:disabled   <- elementos formulario
+:enabled    <- elementos formulario
+:valid      <- elementos formulario
+:invalid    <- elementos formulario
+:requiered  <- elementos formulario
+:hover
+:active
+:focus      <- elementos formulario
+:link
+:visited
+:target     (cuando vamos un sitio en la página mediante un link, este será targeteado)
+*/
+/*
+clear: (both, right, left) ayudan a limpiar los problemas con float (el cual es una muy mala practica usar)
+*/

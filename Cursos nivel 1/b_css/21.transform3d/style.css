@@ -1,0 +1,79 @@
+/* Transform 3D */
+
+.contenedor {
+  width: 90vw;
+  height: 90vh;
+  padding: 30px;
+  background-color: #aaa;
+  margin: 30px;
+  position: relative;
+}
+
+.caja {
+  position: relative;
+  background-color: #555;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+
+/*para activar 3d*/
+.contenedor {
+  perspective: 10rem;
+  transform: perspective(10rem);/*existe pero no sirve mucho*/
+}
+
+.caja:nth-child(1) {
+  transition: transform 2s ease-in-out 0s;
+}
+.caja:nth-child(1):hover {
+  transform: translateZ(1rem);
+}
+
+.caja:nth-child(2) {
+  transition: transform 1s ease-in-out 0s;
+}
+.caja:nth-child(2):hover {
+  transform: translate3d(3rem, -3rem, -10rem);/*xyz*/
+}
+
+.caja:nth-child(3) {
+  transition: transform 1s ease-in-out 0s;
+  transform-origin: 0 0 0; /*xyz*/ /*desde 0 0 arriba izquierda -> cambiar el origen de rotacion 3d y 2d*/
+  transform-origin: top left; /*lo mismo*/
+}
+.caja:nth-child(3):hover {
+  transform: scale3d(0.8, 0.5, 0.00001);/*xyz (los encoje en 3 dimenciones)(z cercano a 0 no hace nada porque estamos en 2d)*/
+}
+.caja:nth-child(3):active { /*AL HACER CLICK*/
+  transform: scale3d(0.8, 0.5, 0.00001) rotate(0.5rad); /*las 2 a la vez (la del hover y la de click)*/
+}
+
+.caja:nth-child(4) {
+  margin: 0 auto;
+  background-image: url(https://i.pinimg.com/736x/55/c6/a6/55c6a62e8253a8525036abb885ab5b7d.jpg);
+  background-size: cover;
+  transition: transform 1s ease-in-out 0s;
+}
+.caja:nth-child(4):hover {
+  transform: rotateX(45deg);
+}
+.caja:nth-child(4):active { /*AL HACER CLICK*/
+  transform: rotateY(45deg);/*turn es 360°*/
+}/*el rotateZ ya seria el default*/
+
+/*resumen:
+perspective
+transform:
+  translate3d(x, y, z) (medidas)
+  scale3d(x, y, z) (valores)
+  rotateX(x) (angulos)
+  rotateY(y) (angulos)
+*/
+/*una propiedad util para tener 2 imagenes 2d una y otra atras es:
+transform-style: preserve-3d;
+y en el contendedor:
+backface-visibility: hidden | visible;
+*/
+
+/*por comas podemos colocar multiples (las 3 al tiempo si quieres)*/
