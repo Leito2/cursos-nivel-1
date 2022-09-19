@@ -1,0 +1,78 @@
+/*originalmente la caja 4 esta abajo de la 3 abajo de la 2 abajo de la 1*/
+.caja1,
+.caja2,
+.caja3,
+.caja4 {
+  background-color: brown;
+  width: 120px;
+  height: 120px;
+  border: 4px solid gray;
+  outline: 2px solid black; /*importante entender como funcionan entas 2 cosas*/
+  /*según el z-index un outline se puede ver encima de otro que tampoco a definido un z-index*/
+}
+/* margin: auto (podemos centrar los objetos relativos al espacio horizontal y vertical que tengan) */
+/*box-sizing: content-box (valor for defecto, pero que ya cambié en el normalize.css a box-sizing: border-box;)*/
+.caja1 {
+  background-color: darkred;
+}
+.caja2 {
+  background-color: brown;
+  position: relative; /*por defecto la position es static*/
+  top: 10px; /*desde arriba se mueve abajo*/
+  bottom: 0; /*desde abajo se mueve arriba (pero a partir de donde se encontró al inicio) */
+  right: 0; /*desde la derecha se mueve a la izquierda*/
+  left: 10px; /*desde la derecha se mueve a la derecha*/
+  /*left y top son las que se deberian usar y son las primordiales, por lo que bottom y right no sirven (ya que se pueden usar negativos en top y left)*/
+  z-index: 1; /*el z-index: 1 ya hace que la caja se muestre arriba de las demás cajas*/
+
+  opacity: 0.8; /*es una opacidad en las cajitas y punto xd*/
+}
+.caja3 {
+  position: absolute; /* 1.es libre de moverse donde quiera y su origen no ocupa espacio (la 4 ocupo su lugar) como en el relative */
+  /*2.su punto de referencia pasa a ser su contenedor(si esta posicionado) o el ViewPort (si su contenedor no esta posicionado (static no cuenta))*/
+  /*3.el objeto se ajusta a su contenido como un inline(si no se le define -> (se transforma en inline-block))*/
+  top: 100px;
+  left: 100px;
+  z-index: 0;
+  background-image: url(https://fondosmil.com/fondo/17030.jpg); /*colocar imagenes*/
+  background-size: cover; /*lo ajusta de una manera bonita la verdad (es el más recomendable)*/
+  background-size: contain; /*no muy recomendable*/
+}
+.caja4 {
+  background-color: rgb(255, 180, 180);
+  z-index: 2; /*este solo afecta cuando las cajas tienen una position (por defecto al posicionar el z-index es 0) (lo mejor es ir de 100 en 100 o 50 en 50) */
+
+  /*la unica forma de colocar elementos padres por delante del hijo es dandole la propiedad z-index negativa al hijo para que se ponga atras(pero el padre no puede tener definido el z-index)*/
+}
+
+/*algunas cosas de background*/
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://fondosmil.com/fondo/17030.jpg);
+  background-size: 100% 100%; /* 100% en x(height) y 100% en y(width)*/
+  background-size: none; /*por defecto*/
+  background-size: contain; /*se escala a ser del tamaño de height de extremo a extremo si es una imagen landspace o tipo paisaje o tipo panoramica, si es portrait o tipo retrato o vertial entonces se escala al width*/
+  background-size: cover;  /*se escala al tamaño del height si es vertical (lo contrario pero parecido a contain)*/
+  background-size: fill; /*lo ajusta a la fuerza (pero no funciona en fondos aca)*/
+  background-position: 0px 0px; /* right bottom */
+  padding: 30px;
+  border: 5px solid #000;
+  background-clip: content-box; /*(desde donde se muestra pero la recorta) tiene: content-box padding-box margin-box  (el content es desde el padding)*/
+  background-origin: content-box; /*(desde donde se muestra (no la recorta porque desde ahí la origina (claro que si la colocamos recortada no se recortara más)) ) tiene las mismas que clip (generalmente es mejor origin pero da igual. son opciones)*/
+  background-repeat: no-repeat; /*es porque repite fondos para completar el vacio como en la caja 3*/
+  background-attachment: scroll; /*por defecto*/
+}
+.bodyy {
+  width: 100vw;
+  height: 50vh;
+  background-image: url(https://fondosmil.com/fondo/17030.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 10px solid #000;
+  padding: 100px;
+  background-origin: border-box; /*aunque tuviera padding se veria igual (por completo)*/
+  background-attachment: fixed; /*la otra propiedad (buenisima)*/
+  background-position: 0vh 200px;/*(right bottom) con fixed esto sirve mucho*/
+  /*se auto ajusta pareciondo que esta fijada en el fondo de la web*/
+}

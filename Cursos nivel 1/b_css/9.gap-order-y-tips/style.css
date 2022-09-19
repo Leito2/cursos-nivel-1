@@ -1,0 +1,55 @@
+.contenedor-flex {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightpink;
+  display: flex;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  /*GAP*/
+  gap: 15px 15px;/*row-gap column-gap*/
+/*similar a grid-row-gap pero es mejor usar gap*/
+}
+.objeto-flex {
+  height: 120px;
+  flex: 0 1 120px;
+  background-color: lightgreen;
+  text-align: center;
+  border: 3px solid black;
+}
+/*ORDER*/
+/*mientras mas grande el numero más posicion en direccion en el main axis, si hay un flex-direction column el main axis pasa a ser cross axis que es donde ocurre el wrap*/
+.objeto-flex {
+  order: 0; /*por defecto (se posicionan en orden en el que esten colocadas en el html) */
+}
+
+.objeto-flex:nth-child(1) {
+  order: 3;/*el que más adelante está*/
+  height: 200px;
+}
+.objeto-flex:nth-child(2) {
+  order: 2;/*segundo que más adelante está*/
+  height: auto; /*para que no este definido (por defecto)*/
+  align-self: flex-end; /*el unico que hace caso a esta propiedad*/
+}
+.objeto-flex:nth-child(3) {
+  order: 1;/*tercero que más adelante está*/
+}
+.objeto-flex:nth-child(4) {
+  order: 0;/*por defecto (en este caso no es el cuarto sino el primero o el que más está atras)*/
+}
+.objeto-flex:nth-child(5) {
+  order: 0;/*por defecto (el segúndo) */
+}
+
+/*es como un z-index pero main-axis-index*/
+
+/*TIPs del proyecto formulario*/
+
+.algo {
+  resize: none; /*quitar para poner grande el text area*/
+}
+.algo {
+  background-color: linear-gradient(to bottom, transparent, #222); /*degradado*/
+}/*hay radial-gradient y conic-radient*/
+
+/*align-self es la ultima propiedad pero es un align-items pero que solo se afecta el mismo y ya*/

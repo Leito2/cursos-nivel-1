@@ -1,0 +1,148 @@
+
+/* GRID (controlar el exceso de celdas con auto-fit y auto-fill) 
+*/
+
+.grid-container {
+  width: 100vw;
+  background-color: #888;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  /*me va a subir filas hacia arriba si hay el espacio de que entre una con 100px*/
+  grid-template-rows: repeat(3, 150px); /*las explicitas son 3 filas*/
+  /*por lo que para las implicitas voy a crear una grid-auto-rows*/
+  grid-auto-rows: 50px; /*para las que no me quepan se QUEDEN ABAJO y las que se salgan se creen con 50px de height*/
+  grid-gap: 5px;
+}
+.grid-items {
+  background-color: #bbb;
+}
+
+/*la DIFERENCIA cuando colocamos auto-fit es que el auto-fit cuando tenemos una sola fila, estas columnas se siguen alargando*/
+/*tambien podemos crear columnas modificando la generacion de columnas y su width:
+grid-auto-flow: column dense;
+grid-auto-columns: 100px;
+*/
+
+/* Alineación de grid */
+
+.grid-container-dos {
+  width: 100vw;
+  background-color: #888;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(75px, 1fr));
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 5px;
+}
+.grid-items-dos {
+  background-color: #bbb;
+}
+
+/*mientras que el flex para alinear horizontalmente utilizamos: 
+
+justify-content: (baseline, auto, center, space-around, space-between, space-evenly, right, left)
+
+y para alinear verticalmente si tenemos 1 fila o columna: 
+
+align-items: (flex-start, flex-end, stretch, baseline, center)
+
+y para alinear verticalmente si tenemos varias fila o columnas: 
+
+align-content: (flex-start, flex-end, stretch, baseline, center, space-between, space-around, space-evenly)
+
+*/
+
+/* PARA GRID TENEMOS ALGO PARECIDO
+
+1. justify-items (algo son las celdas y algo son los items, por lo que el item es igual de alto y ancho como lo definamos, o su contenido (por defecto es igual a su contenido))
+2. align-items (lo mismo pero verticalmente)
+(estos no tienen los spaces)
+*/
+
+.grid-container-dos {
+  align-items: center; /*centra verticalmente*/
+  justify-items: center; /*centra horizontalmente*/
+  font-size: 30px; /*le subí el tamaño para que no se vea tan chiquito*/
+}
+
+
+/*para definir sus tañanos y no depender de su contenido es: */
+
+.grid-container-tres {
+  width: 100vw;
+  background-color: #888;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(75px, 1fr));
+  grid-template-rows: repeat(3, 150px);
+  grid-auto-rows: 50px;
+  grid-gap: 5px;
+}
+.grid-items-tres {
+  background-color: #bbb;
+}
+
+.grid-container-tres {
+  justify-items: center;
+  align-items: center;
+}
+
+/*ahora definamos sus tamaños*/
+
+.grid-items-tres {
+  width:65px;
+  height: 65px;
+}
+
+/*tambien se puede alinear con: 
+
+1.justify-content (se le suman: end, start (casi lo mismo que flex-end y flex-start))
+2.align-content
+
+*/
+
+.grid-container-cuatro {
+  width: 100vw;
+  height: 450px; /*para probar el align-content I M P O R T A N T E*/
+  background-color: #888;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(75px, 100px));
+  grid-template-rows: repeat(3, 100px);
+  grid-auto-rows: 50px;
+  grid-gap: 5px;
+}
+.grid-items-cuatro {
+  background-color: #bbb;
+}
+
+/*primero definamos sus tamaños*/
+
+.grid-items-cuatro {
+  padding: 30px; /*tambien lo puede redefinir con padding*/
+}
+
+.grid-container-cuatro { /*en el contenedor*/
+  align-items: center;
+  justify-items: center;
+}
+/*para notar mejor esto ver con el inspeccionador horizontal con la opcion arriba a la derecha de los 3 puntos*/
+.grid-container-cuatro {
+  align-content: space-between; /*tambien se suma end y start*/
+  justify-content: end; /*se puede con start, con baseline, con end, con space-between, etc...*/
+  /*tambien*/
+  place-content: space-between end;/*align luego justify*/
+}
+/*el between en las filas y columnas se nota pero el center tambien esta solo es cuention de inspeccionar los elementos pero si estan centrados también*/
+
+/*
+en gap: row column;
+en grid-area: row column
+y en place-*: rows columns
+
+se ve una preferencia de rows y luego columns en flex y grid
+*/
+/*
+SERÍA
+
+en gap: rows columns;
+en grid-area: row-line column-line;
+y en place-*: algin justify:          <- con items, content y self
+*/

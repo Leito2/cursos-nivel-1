@@ -1,0 +1,151 @@
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: auto;
+}
+.flex-item {
+  background-color: lightblue;
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  margin: 10px;
+}
+.flex-item:nth-child(1) {
+  background-color: lightskyblue;
+}
+.flex-item:nth-child(8) {
+  background-color: lightgray;
+}
+.flex-item {
+  flex: 1;/*para que ocupen el espacio a su alrededor (de sobra)*/
+}
+.flex-container {
+ flex-flow: row wrap;
+}
+
+
+
+
+/*para controlar esto que sucede con wrap podemos utilizar justify-content*/
+.flex-item {
+  width: 100px;
+  max-width: 100px;
+}
+.flex-container {
+  justify-content: baseline; /*por defecto(centra un poco si tienen diferentes tamaños pero si son iguales es como un flex-start)*/
+  justify-content: flex-start; /*por el inicio*/
+  justify-content: flex-end; /*por el final*/
+  justify-content: center; /*se centra el contenido hacia la midad pero no deja la misma distancia en los extremos (solo se nota cuando tenemos mas espacio libre que de espacio de cajas)*/
+  justify-content: space-around; /*crea un margin uniforme entre todos los objetos(todos con el mismo margen)*/
+  justify-content: space-between; /*crea un margin uniforme que separa solo los objetos por ejemplo si son 2 objetos es el mimsmo margin left del objeto de la derecha que el margin right del objeto de la izquierda*/
+  justify-content: space-evenly;  /*el margin se acomoda con tal de que la separacion entre objetos y bordes sea la misma*/
+}
+
+
+/*saber que wrap para column funciona siempre que se defina el tamaño del viewport o en este caso seria un caja con 100VW y 100VH*/
+.flex-container {
+  width: 100vw;
+  height: 100vh;
+}
+/*primero cuando se tiene solo una linea entonces para ajustar el contenido se usa align-items*/
+.dos {
+  align-items: stretch; /*valor por defecto, si no se le define a lo objetos el height entonces este se estira*/
+}
+.d0s {
+  background-color: lightblue;
+  width: 100px;
+  margin: 10px;
+}
+.d0s:nth-child(1) {
+  background-color: lightskyblue;
+}
+.d0s:nth-child(7) {
+  background-color: lightgray;
+}
+
+
+/*cuando hay varias filas entonces se ajusta el contenido con align-content*/
+.tres {
+  align-content: center; /*luego se alinean en el centro*/
+}
+.tles {
+  background-color: lightblue;
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.tles:nth-child(1) {
+  background-color: lightskyblue;
+}
+.tles:nth-child(14) {
+  background-color: lightgray;
+}
+
+
+/*luego una que se parece a stretch pero no se estira si no se define el width*/
+.cuatro {
+  align-content: flex-start; /*luego se alinean arriba o al inicio - valor por defecto*/
+}
+.cu4tro {
+  background-color: lightblue;
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.cu4tro:nth-child(1) {
+  background-color: lightskyblue;
+}
+.cu4tro:nth-child(14) {
+  background-color: lightgray;
+}
+
+
+/*luego una que es alrevez tipo para que ahora si sirva: wrap-reverse */
+.cinco {
+  align-content: flex-end; /*luego se alinean en el abajo*/
+/*  flex-flow: row wrap-reverse; (lo malo es que si colocamos esto entonces se va para arriba) */
+
+/* en realidad esto tambien sucederia al revez con flex-start y se iria para abajo pero el orden wrap-reverse seria de izq a derecha (se arreglaria con un row-reverse) 
+ESTO:   flex-flow: row-reverse wrap-reverse; <---- cuando se tiene un align-content: flex-start;
+*/
+}
+.c1nco {
+  background-color: lightblue;
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.c1nco:nth-child(1) {
+  background-color: lightskyblue;
+}
+.c1nco:nth-child(14) {
+  background-color: lightgray;
+}
+
+
+/*por ultimo uno que es casi igual a flex-start*/
+.seis {
+  flex-flow: row wrap-reverse;
+  align-content: baseline; /*los colocar al inicio si tienen el mismo tamaño pero si no, los trata de centrar respecto a los más grandes pero se colocan al inicio de igual manera como flex-start pero centrados en sus propias lineas*/
+}
+.ceis {
+  background-color: lightblue;
+  min-width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.ceis:nth-child(1) {
+  background-color: lightskyblue;
+}
+.ceis:nth-child(14) {
+  background-color: lightgray;
+  height: 150px;
+}
+
+
+
+/*AL FINAL | align-items | es como align-content pero para una sola fila o columna (ya que flex es unidimencional en realidad, pero según du direccion con una dimención funciona content y como es la tranversal al eje de dirección es justify-content)*/
+/*align-items  no tiene spaces*/
