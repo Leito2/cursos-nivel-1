@@ -55,12 +55,12 @@
   background-size: contain; /*se escala a ser del tamaño de height de extremo a extremo si es una imagen landspace o tipo paisaje o tipo panoramica, si es portrait o tipo retrato o vertial entonces se escala al width*/
   background-size: cover;  /*se escala al tamaño del height si es vertical (lo contrario pero parecido a contain)*/
   background-size: fill; /*lo ajusta a la fuerza (pero no funciona en fondos aca)*/
+  background-position: 0px 0px; /* right bottom */
   padding: 30px;
   border: 5px solid #000;
   background-clip: content-box; /*(desde donde se muestra pero la recorta) tiene: content-box padding-box margin-box  (el content es desde el padding)*/
   background-origin: content-box; /*(desde donde se muestra (no la recorta porque desde ahí la origina (claro que si la colocamos recortada no se recortara más)) ) tiene las mismas que clip (generalmente es mejor origin pero da igual. son opciones)*/
   background-repeat: no-repeat; /*es porque repite fondos para completar el vacio como en la caja 3*/
-  background-position: 0px 0px; /* right bottom */
   background-attachment: scroll; /*por defecto*/
 }
 .bodyy {
