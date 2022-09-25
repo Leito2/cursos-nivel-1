@@ -1,0 +1,29 @@
+.padre {
+  position: relative;
+  display: inline-block;
+  margin: 100px 500px;
+  height: 300px;
+  width: 300px;
+  background-color: #b1c1bd;
+}
+.hijo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  transform-style: preserve-3d;
+  perspective: 100px;
+  transition: transform 1s;
+}
+.hijo:nth-child(1) {
+  background-color: #444;
+  backface-visibility: visible; /*la voltea*/
+}
+.hijo:nth-child(2) {
+  background-image: url('/assets/imagenes/lobo.jpg');
+  backface-visibility: hidden; /*la muestra*/
+}
+.padre:hover .hijo {
+  transform: rotateY(0.5turn); /*ahora se muestra la 1 y luego la 2 se esconde, porque tiene backface-visibility hidden*/
+}

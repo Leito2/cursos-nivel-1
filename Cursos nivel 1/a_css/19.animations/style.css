@@ -20,9 +20,9 @@
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-delay: 0s;
+  animation-iteration-count: 1; /*cuantas veces de repite la animación*/
   animation-direction: reverse; /*por defecto es (normal), si quieres ir de to a from es (reverse), las dos es (alternative),  y las 2 pero comienza con reverse (alternative-reverse)*/
   /*modo final (cuando termina)*/
-  animation-iteration-count: 1; /*cuantas veces de repite la animación*/
   animation-fill-mode: none; /*se queda como se definió antes (no al inicio de la animación(la cual inicia cuando carga toda la página))*/
   animation-fill-mode: backwards; /*se queda como inició*/
   animation-fill-mode: forwards;/*se queda como finaliza */
@@ -44,7 +44,7 @@
   animation-delay: 1s;
   /*repetirla*/
   animation-iteration-count: infinite; /*repeticiones de animación*/
-  animation-direction: alternate; /*dirección en la linea del tiempo creada del keyframe (normal, reverse, alternative, alternative-reverse)*/
+  animation-direction: alternate; /*dirección en la linea del tiempo creada del keyframe (normal, reverse, alternate, alternate-reverse)*/
   animation-fill-mode: both;
   /*aquí el fill-mode es innecesario*/
   animation: desplazarse-2 2s ease 1s infinite alternate both;

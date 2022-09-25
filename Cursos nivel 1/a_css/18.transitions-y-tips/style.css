@@ -52,9 +52,9 @@
 }
 .cinco {
   transition-timing-function: steps(5);
-  animation-timing-function: cubic-bezier(0.075, 0.95, 0.150, 1);/*función especial que se puede editar en el browser*/
+  transition-timing-function: cubic-bezier(0.075, 0.95, 0.150, 1);/*función especial que se puede editar en el browser*/
   /*                                       x1     y1     x2    y2     (luego se explica mejor)*/
-  transition-timing-function: ease-in-out;/*comienza y termina lento pero en la mitad es rapido*/
+  transition-timing-function: ease-in-out;/*comienza y termina lento pero en la mitad es rapido (más recomentable por un principio de animación)*/
   position: relative;
   left: 0;
 }
@@ -90,4 +90,4 @@
 
 /*tambien hay errores que animan cosas al inicio lo cual es por especificida y tener distintas propiedades redefinidas*/
 
-/*existen propiedades no animables*/
+/*existen propiedades no animables como border*/
