@@ -16,18 +16,18 @@
 // --------------
 // TIPOS DE DATOS
 
-// Entero
+// Entero (int)
 // 1, 4, 7
 
-// Flotante
+// Flotante (float)
 // 1.4, 3.1416
 
-// Texto
+// Texto (string)
 // "hola", "1" (comillas dobles)
 // 'hola', '1' (comillas simples)
 // `hola`, `1` (backticks o acento)
 
-// Booleano
+// Booleano (bool)
 // true, false (a veces da 1 y 0)
 
 // Especiales
@@ -148,10 +148,10 @@ alert(numero)
 // saludo = 'hola'.concat(' bienvenido')
 // 'hola bienvenido'
 
-// Concatenación con $()
+// Concatenación con ${}
 /*
 nombre = 'leito';
-frase = `hola $(leito)` 
+frase = `hola ${leito}` 
 (solo funciona con los backticks)
 */
 
@@ -243,6 +243,7 @@ frase = `hola $(leito)`
 
 // 
 // CONDICIONALES
+// parte de los bloques de control
 
 // Estructura básica
 // If
@@ -321,6 +322,6 @@ if (false) {
 */
 
 
-//
+// ------------------
 // CONVERTIR A ENTERO
 // parseInt('3') = 3
