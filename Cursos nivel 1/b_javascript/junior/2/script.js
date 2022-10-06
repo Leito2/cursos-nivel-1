@@ -14,7 +14,7 @@ misDatos = ['leandro', 24, true];
 nombre = misDatos[0] = 'leandro'
 (el último elemento sería el índice -1, como el penúltimo sería -2)
 (mirarlos)
-estado = misDatos['leandro'] = true <- (si lo encuentra)
+estado = 'leandro' in misDatos = true <- (si lo encuentra)
 */
 
 
@@ -29,6 +29,9 @@ nombreListaAsociativa = {
   clave: valor,
   clave: valor
 };
+(Llamar un elemento del array asociativo)
+valor = nombreListaAsociativa.clave   ← puede ser mejor así
+valor = nombreListaAsociativa[clave]
 -------------------------
 misDatos = {
   nombre: 'leandro',
@@ -56,17 +59,12 @@ while (condición) {
 };
 ------------------------------
 let i = 0;
-while (i < 10) {
-  i++
+while (i < 10) {   <-- mientras de 0 sea menor que 10
+  i++               <- aumenta 1
   console.log(i);
 };
 (manda números de 1 al 9)
 */
-
-
-// --------------me tira los números impares ya que al dividirlos entre 2 si da 0 entonces continua iterando
-// Es un condicional el cual si es false sigue el flujo del JS, pero si es true, repite el bloque de código y luego hace la condición.
-
 
 // Estructura básica
 /*
@@ -98,7 +96,7 @@ for (let index = 1; index < 10; index++) {
   console.log(index)
 }
 (coloca los números de 1 al 9)
-(se suma y luego se condiciona como while | index es una variable que solo va existir en ese bloque de código)
+(se suma y luego se condiciona como while menos al inicio | index es una variable que solo va existir en ese bloque de código)
 */
 
 
@@ -214,7 +212,6 @@ for (let i = 1; i <= 3; i++) {
   console.log(i)
 }
 (solo coloca 4 ya que entre al ciclo pequeto y rompio el ciclo grande despues de colocar j que es 4)
-()
 */
 
 
@@ -237,12 +234,17 @@ const nombre = (parámetros) => {
   Código de la función
 }
 (o)
-const nombre = parámetro => {
+const nombre = parámetro => {       <-- si es solo un parámetro se puede dejar así
   Código de la función
 }
-(si es solo un parámetro se puede dejar así)
 (o para retornar una sola línea de código)
 const nombre = parámetro => línea de código
+(o sin parámetros)
+const nombre = () => {
+  Código de la función
+}
+(o sola línea sin parámetros)
+const nombre = () => línea de código
 [ESTAS FUNCIONES CON COMO LAS FUNCIONES LAMBDA DE PYTHON]
 ---------------------------------------------
 function saludar(nombre) {
@@ -275,6 +277,7 @@ function sumar(a, b) {
   return a + b
 };
 variable = sumar(1, 5) <--- 6
+(variable es igual a 6)
 */
 
 
@@ -285,14 +288,12 @@ variable = sumar(1, 5) <--- 6
 // Definir
 /*
 tabla = [[lista], [lista], [lista]]
+// Llamar o redefinir
+tabla[lista][elemento] = elemento //para redefinir
+elemento = tabla[lista][elemento] //para llamar
+(es como elejir a nivel de listas y luego a nivel de elementos dentro de la lista seleccionada)
 --------------------------------------
 cosas = [['pera', 'banana'], ['pc', 'iphone']]
-*/
-
-// Llamar
-/*
-tabla[lista][elemento]
-(es como elejir a nivel de listas y luego a nivel de elementos dentro de la lista seleccionada)
-----------------------
-cosas[0][1]='banana'
+cosas[0][1] = 'banana'
+banana = cosas[0][1]
 */

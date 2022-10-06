@@ -2,9 +2,9 @@
 // Es completamente orientado a objetos
 // Imperativo: lee y ejecuta línea por línea
 // Case sensitive: detecta mayúsculas y minúsculas
-// Basado en prototipos-----------------------------no entendi bien
+// Basado en prototipos: crea una estructura interactiva en la página web
 // Tipado déibil: no tienen tanta especificación de tipos de variable
-// Lenguaje dinámico: Las variables se adapdan al dato(1+1 es 2 entero; a es 'a').
+// Lenguaje dinámico: Las variables se adapdan al dato(1+1 es 2 entero; 'a' + 1 es 'a1').
 
 // --------------
 // MANDAR ALERTAS
@@ -34,6 +34,14 @@
 // Undefined (si no se define el valor de una variable)
 // Null (se define un valor vacío a una variable)
 // Nan (Un valor erroneo a una variable)
+
+// Para ver que tipo de dato es algo:
+/*
+typeof dato
+───────────
+console.log(typeof 'hola')
+(sería un string)
+*/
 
 
 // -----------------
@@ -69,7 +77,7 @@ alert(numero)
 
 // --------
 // HOISTING
-// Como algo puede er inicializado despúes pero usado antes
+// Como algo puede ser inicializado despúes pero usado antes
 
 
 // -----------
@@ -118,9 +126,6 @@ alert(numero)
 // División ( / )
 // 6 / 3 (da 2)
 
-// División entera ( // )
-// 7 / 3 (da 2)
-
 // Potencia ( ** )
 // 3 ** 3 (da 27)
 
@@ -143,6 +148,7 @@ alert(numero)
 // se hace una unión con carrácteres no númericos y números
 // 'hola' + 22 = 'hola22'
 // '' + 1 + 1 = 11 (con un string vacío hace que el resto sea texto)
+// esto demuestra el tipado dinámico
 
 // Concatenación con .concat()
 // saludo = 'hola'.concat(' bienvenido')
@@ -151,13 +157,13 @@ alert(numero)
 // Concatenación con ${}
 /*
 nombre = 'leito';
-frase = `hola ${leito}` 
+frase = `hola ${nombre}`
 (solo funciona con los backticks)
 */
 
 // Observaciones:
 // si se usan comillas dobles, adentro solo se puede usar simples y biseversa
-// si se usan backtricks se pueden usar las dos
+// si se usan backticks se pueden usar las dos
 // a esto se le llaman escapes
 
 
@@ -232,7 +238,7 @@ frase = `hola ${leito}`
 // ----
 // TIPS
 
-// las constantes van con UPPERCASE (se llaman también raw (all caps))
+// las constantes van con UPPERCASE (se llaman también (raw all caps))
 // las variables van con camelCase
 // los objetos y clases van con PascalCase (en ocaciones los objetos no)
 // todo en HTML y CSS va con kebab-case
@@ -259,6 +265,7 @@ if (true) {
 if (false) {
   No se ejecuta lo que hay aca
 }
+(también sucede que se ejecuta si hay una variable sin operador relacional y no se ejecuta si hay un null)
 */
 
 // Estructura básica
@@ -293,7 +300,7 @@ if (condición) {
 } else {
   Sentencia recursiva
 }
----------------------------------
+────────────────────
 if (true) {
   Se ejecuta
 } else if (false) {
@@ -301,7 +308,7 @@ if (true) {
 } else {
   No se ejecuta
 }
----------------------------------
+────────────────────
 if (false) {
   No se ejecuta
 } else if (true) {
@@ -309,7 +316,7 @@ if (false) {
 } else {
   No se ejecuta
 }
----------------------------------
+────────────────────
 if (false) {
   No se ejecuta
 } else if (false) {
@@ -317,8 +324,20 @@ if (false) {
 } else {
   Se ejecuta
 }
------------------------------------------------------
-(pueden ir cuanyas sentencias se quieran con else if)
+(pueden ir cuantas sentencias se quieran con else if)
+*/
+// FORMA ALTERNATIVA
+// cuando solo se hace una acción
+/*
+if (condición) acción;
+else if (condición) acción;
+else acción
+──────────────────────────────────────────|
+let x = 10;                               |
+if (x > 11) console.log('número grande'); |
+else if (x === 10) console.log('es 10');  |
+else console.log('número pequeño')        |
+──────────────────────────────────────────|
 */
 
 

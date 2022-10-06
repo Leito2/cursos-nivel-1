@@ -23,10 +23,10 @@ class Animal {
     this.especie = especie;
     this.edad = edad;
     this.color = color;
-    this.lindo = true    <-- se pueden colocar más carracterísticas
+    this.lindo = true    <-- se pueden colocar más carracterísticas(solo que cada objeto creado con esta clase será lindo)
   }
 }
-(está creando un animal con carracterísticas como especie, edad, color)
+(está creando un animal(lindo) con carracterísticas como especie, edad, color)
 */
 
 
@@ -49,7 +49,8 @@ console.log(rayo)
 Animal {
   color: 'amarillo',
   edad: 9,
-  especie: 'perro'
+  especie: 'perro',
+  lindo = true
 } )
 (si ahora se puso naranjado solo colocar rayo.color = 'naranjado' y mostrarlo con console.log('Soy de color: ' + rayo.color))
 */
@@ -60,7 +61,7 @@ Animal {
 // Son las habilidades de una clase de lo que se puede hacer (son funciones dentro de las clases).
 /*
 class NombreClase {
-  constructor (parametro1, parametro2, parametro3) {   <- CONSTRUCTOR es obligatorio
+  constructor (parametro1, parametro2, parametro3) {
     this.parametro1 = parametro1;
     this.parametro2 = parametro2;
     this.parametro3 = parametro3
@@ -84,6 +85,7 @@ class Animal {
 (luego los metodos se llaman como una función pero con el nombre del objeto antes)
 rayo.saludar()
 (hola soy un perro, tengo 9 años y soy de color naranja)
+(si tuviera parámetros solo seria colocar nombreDelMetodo(argumentos))
 */
 
 
@@ -115,8 +117,8 @@ rayo.saludar()
 /*
 class NombreClaseHeredada extends NombreClase {
   constructor (parametro1, parametro2, parametro3, parametro4) {   <-- ahora hay 4 parámetros
-    super(parametro1, parametro2, parametro3);                     <-- herede los 3
-    this.parametro4 = parametro4                                   <-- creé un 4
+    super(parametro1, parametro2, parametro3);                     <-- heredé los 3 de la otra
+    this.parametro4 = parametro4                                   <-- creé un 4 parámetro
   };
   metodoDeLaOtraClase (parámetros) {                               <-- metodo separado a la clase original
     Bloque de código de la función
@@ -125,6 +127,7 @@ class NombreClaseHeredada extends NombreClase {
 (se hereda todo lo de la clase NombreClase y además consige otras cosas)
 (y para crear el objeto con '2 clases')
 const NombreObjeto = new NombreClaseHeredada(argumento1, argumento2, argumento3, argumento4)
+(esto muestra que la clase heredada es 'más grande que la clase original de la que esta clase heredó')
 ----------------------------------------------------------------------------------------------------------
 class Perro extends Animal {
   constructor(especie, edad, color, raza) {
@@ -137,7 +140,7 @@ class Perro extends Animal {
 }
 const rayo = new Perro('perro', 9, 'amarrillo', 'pincher');
 rayo.ladrar()
-(rayo es animal y además tiene carracterísticas perro)
+(rayo es perro y además tiene carracterísticas animal)
 */
 
 
@@ -153,7 +156,7 @@ class NombreClase {
     this.parametro2 = parametro2;
     this.parametro3 = parametro3
   };
-  static metodoEstaticoClase (parámetros) {
+  static metodoEstaticoClase (parámetros sin this.) {
     Código sin uso de this.parametros
   }
 }
@@ -216,7 +219,7 @@ class NombreClase {
     this.parametro3 = parametro3;
     this.parametro4 = null   <-- por ejemplo cuando no se define a la primera un valor
   };
-  set metodoSetClase (parámetro) {
+  set metodoSetClase (parámetro) {    <- esto es como ponerse a redefinir un atributo del objeto
     this.parametro4 = parámetro
   }
 }
@@ -224,11 +227,10 @@ class NombreClase {
 NombreObjeto.metodoSetClase = argumento
 ----------------------------------------------------
 class Animal {
-  constructor(especie, edad, color, viejo) {
+  constructor(especie, edad, color, viejo = null) {    <-- viejo = null es como this.viejo = null (se puede simplemente no definir)
     this.especie = especie;
     this.edad = edad;
     this.color = color;
-    this.viejo = null
   };
   set vejesAnimal (vejes) {
     this.viejo = vejes

@@ -1,26 +1,25 @@
 // MÉTODOS DE CADENAS
 let cadena = new String('cadena de prueba')   // recordar que las cadenas son inmutables
 //let cadena = 'cadena de prueba';           // lo mismo
-console.log(cadena.length);               // numero de carracteres (carracterpistica en realidad de arrays)
+console.log(cadena.length);               // número de carrácteres (carracterpistica en realidad de arrays)
 
 console.log(cadena.concat(' hola'));      // Es como contatenar o unir algo al final
 
-console.log(cadena.startsWith('cadena'));     // cadena inicial
-console.log(cadena.endsWith('prueba'));      // cadena final
-console.log(cadena.includes(' de '));       // cadena incluida
-console.log(cadena.indexOf('d'));          // indice inicial de cadena incluida
-console.log(cadena.lastIndexOf('d'));     // indice final de cadena incluida
+console.log(cadena.startsWith('cadena'));     // cadena inicial (true)
+console.log(cadena.endsWith('prueba'));      // cadena final (true)
+console.log(cadena.includes(' de '));       // cadena incluida (true)
+console.log(cadena.indexOf('d'));          // indice inicial de cadena incluida (2)
+console.log(cadena.lastIndexOf('d'));     // indice final de cadena incluida (7)
 console.log(cadena.indexOf('z'));        // indice -1 si no la encuentra
 
 console.log(cadena.padStart(20, '12'));       // rellenar al inicio si no llega a más de 20 carrácteres
 console.log(cadena.padEnd(20, '12'));        // rellenar al final si no llega a más de 20 carrácteres
-console.log(cadena.repeat(2));              // repetir la misma cadena n cantidad de veces
+console.log(cadena.repeat(2));              // repetir la misma cadena n cantidad de veces 'cadena de pruebacadena de prueba'
 
 let resultado;
 
-resultado = cadena.split(' ');                // crea una lista separando elementos por la sección de cadena que le metamos
+resultado = cadena.split(' ');                // crea una lista separando elementos por la sección o carrácteres de cadena que le metamos
 //resultado: [ 'cadena', 'de', 'prueba' ]
-resultado = ['cadena', 'de', 'prueba'];
 resultado = resultado.toString();          // volver a convertir a string (es como una variación de join)
 //resultado: 'cadena,de,prueba'
 
@@ -87,13 +86,14 @@ let join = lista.join();                      // convierte el array en un string
 //join: nico,laura,pedro,maría,jorge,leo,leito
 join = lista.join(' ');                     // en un document.write se podría colocar cosas como <br>Elemento: (esto iría antes de cada elemento)
 //join: nico laura pedro maría jorge leo leito
-// para listas también esta toString() sin embargo es mejor usar este igual
+// para listas también esta toString() sin embargo es mejor usar este join igual
 
 lista = ['nico', 'laura', 'pedro', 'maría', 'jorge', 'leo', 'leito'];
 let slice = lista.slice(1, 2);                      // coge elementos de un array (inicio, final) (no incluye final)
 //slice: ['laura']
 slice = lista.slice(-1);                      // coge elementos de un array (inicio)
 //slice: ['leito']
+//(es como un substring pero creando una lista con los indices de los elementos)
 
 //entre splice y slice, splice(los quita y se los queda y pone más), slice(se los queda pero no los quita)
 // slice es como substring(inicio, final)
@@ -148,6 +148,7 @@ holi
 holi
 */
 //filter: ['laura', 'pedro', 'jorge', 'leito']
+//(filter es como si por defecto retornara algo y pide un condicional al retornar)
 
 
 // MATH
@@ -185,3 +186,22 @@ console.log(Math.E);  // número e: 2.718281828
 // Math.LN10 (logarítmo natural de 10), Math.LOG2E (logarítmo base 2 de e)
 
 
+// CONSOLA
+
+console.log('hola'); // aparece un mensaje normal de consola
+console.info('hola'); // aparece un mensaje de información de consola
+console.warn('hola?'); // aparece un mensaje de advertencia en la consola
+console.error('¡hola!'); // aparece un mensaje de error en la consola
+console.table(lista); // un array aparece con su indice o clave y su valor como tabla
+console.clear(); // borra todo registro actual de la consola
+console.count(); // aumenta un contador a 1, luego a 2, 3, etc...
+console.countReset(); // resetea el contador
+console.group('nombre'); // establece un grupo de registros en la consola
+console.groupEnd(); // cierra el grupo de registros
+console.groupCollapsed('nombre'); // crea un grupo cerrado de registros en la consola
+console.time(); // inicia un contador
+console.timeLog(); // registra cuanto lleva el contador
+console.timeEnd(); // termina el contador y dice el tiempo final
+
+console.log('%cAceptar', 'color:green'); // letra verde (antes con (%c))
+console.log('%cRechazar', 'color:red'); // letra roja (esto con css)
